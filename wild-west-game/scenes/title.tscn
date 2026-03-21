@@ -45,4 +45,17 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 40
-text = "Play"
+text = "PLAY"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=614688487]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4ignj")
+
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1763132349]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 40
+text = "CREDITS"
