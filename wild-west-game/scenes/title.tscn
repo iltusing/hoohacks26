@@ -21,7 +21,7 @@ size_flags_vertical = 0
 [node name="title" type="Label" parent="VBoxContainer/title_container" unique_id=1715514048]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ignj")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 60
 text = "Wild West Game"
 
 [node name="author_container" type="CenterContainer" parent="VBoxContainer" unique_id=969530833]
@@ -31,11 +31,11 @@ size_flags_vertical = 0
 [node name="authors" type="Label" parent="VBoxContainer/author_container" unique_id=999736021]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ignj")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 text = "Created by Isabel, Scarlett, and Zach"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1458002189]
-custom_minimum_size = Vector2(0, 125)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_4ignj")
 
@@ -44,11 +44,11 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_4ignj")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 text = "PLAY"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=614688487]
-custom_minimum_size = Vector2(0, 25)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_4ignj")
 
@@ -57,5 +57,5 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_4ignj")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 text = "CREDITS"
