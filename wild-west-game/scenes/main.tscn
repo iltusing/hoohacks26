@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cdsejeu3mb3ua" path="res://assets/Yeehaw/yeehaw_tileset_standard.png" id="3_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bhfq2w3umaww1" path="res://assets/Yeehaw/yeehaw_parallax_layerC_standard.png" id="4_tipki"]
 [ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="5_85g3d"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="6_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("1_tbgi4")
@@ -2169,3 +2170,6 @@ tile_set = SubResource("TileSet_lpvoh")
 z_index = -1
 tile_map_data = PackedByteArray("AAACAP//AgAIAAMAAAACAP7/AgAIAAIAAAALAP//AgAJAAMAAAAXAP7/AgAIAAIAAAAXAP//AgAIAAMAAAAYAP//BAANAAEAAAA=")
 tile_set = SubResource("TileSet_lpvoh")
+
+[node name="Player" parent="." unique_id=1502754261 instance=ExtResource("6_tefeu")]
+position = Vector2(0, -7)
