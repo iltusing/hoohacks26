@@ -1,3 +1,33 @@
 [gd_scene format=3 uid="uid://bb45tt6exka7b"]
 
-[node name="Title" type="Node2D" unique_id=1159777046]
+[ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="1_4ignj"]
+
+[node name="Title" type="MarginContainer" unique_id=1664753609]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1333544472]
+layout_mode = 2
+
+[node name="title_container" type="CenterContainer" parent="VBoxContainer" unique_id=411628715]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="title" type="Label" parent="VBoxContainer/title_container" unique_id=1715514048]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 70
+text = "Wild West Game"
+
+[node name="author_container" type="CenterContainer" parent="VBoxContainer" unique_id=969530833]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="authors" type="Label" parent="VBoxContainer/author_container" unique_id=999736021]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 30
+text = "Created by Isabel, Scarlett, and Zach"
