@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="1_4ignj"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ignj"]
+
 [node name="Title" type="MarginContainer" unique_id=1664753609]
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,3 +33,16 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 30
 text = "Created by Isabel, Scarlett, and Zach"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1458002189]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4ignj")
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=604020500]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 40
+text = "Play"
