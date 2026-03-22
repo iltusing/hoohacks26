@@ -28,6 +28,10 @@ enum ActionState {
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var left_ground_check: RayCast2D = $LeftGroundCheck
 @onready var right_ground_check: RayCast2D = $RightGroundCheck
+@onready var die2: AudioStreamPlayer = $AudioStreamPlayer
+@onready var shoot_sound: AudioStreamPlayer = $AudioStreamPlayer2
+
+
 
 var player: CharacterBody2D
 var action_state: ActionState = ActionState.NONE
@@ -133,6 +137,7 @@ func _fire_at_player() -> void:
 	action_state = ActionState.ATTACKING
 	shoot_timer = shoot_interval
 	_spawn_bullet()
+	shoot_sound.play()
 	animated_sprite_2d.play("attack")
 
 func _spawn_bullet() -> void:
@@ -169,10 +174,11 @@ func _on_animation_finished() -> void:
 func die() -> void:
 	if is_dead:
 		return
-
+	
 	is_dead = true
 	died.emit(self)
 	action_state = ActionState.DYING
+	die2.play()
 	velocity = Vector2.ZERO
 	collision_shape_2d.set_deferred("disabled", true)
 	animated_sprite_2d.play("die")
