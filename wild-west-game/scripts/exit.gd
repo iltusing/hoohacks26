@@ -14,6 +14,6 @@ func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
 
-func _process(delta):
-	if player_in_range and Input.is_action_just_pressed("interact"):
+func _unhandled_input(event):
+	if player_in_range and event.is_action_pressed("interact"):
 		get_tree().change_scene_to_file(target_scene)

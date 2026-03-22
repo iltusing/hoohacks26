@@ -19,6 +19,6 @@ func _on_body_exited(body):
 		player_in_range = false
 		player = null  # clear player reference
 
-func _process(delta):
-	if player_in_range and player != null and Input.is_action_just_pressed("interact"):
+func _unhandled_input(event):
+	if player_in_range and player != null and event.is_action_pressed("interact"):
 		player.global_position = spawn.global_position
