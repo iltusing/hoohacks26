@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c74gp2mrbupii" path="res://assets/npc/npc_idle.png" id="1_2wgef"]
 [ext_resource type="Script" uid="uid://38fy077y5qyp" path="res://scripts/quest_prompt.gd" id="2_x2mh3"]
 [ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="3_txcl6"]
+[ext_resource type="AudioStream" uid="uid://cpd1qvl3wgybk" path="res://assets/Sfx/coinsfx.wav" id="4_x2mh3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7k5lx"]
 atlas = ExtResource("1_2wgef")
@@ -41,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k5lx"]
-size = Vector2(109, 52)
+size = Vector2(84, 48)
 
 [node name="QuestNPC" type="Node2D" unique_id=250329415]
 
@@ -55,7 +56,7 @@ frame_progress = 0.6447463
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1999166921]
-position = Vector2(0, -16)
+position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_7k5lx")
 
 [node name="QuestPrompt" type="CanvasGroup" parent="." unique_id=816415705]
@@ -69,7 +70,9 @@ offset_bottom = 6.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_txcl6")
 theme_override_font_sizes/normal_font_size = 3
-text = " "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="QuestPrompt" unique_id=1142396386]
+stream = ExtResource("4_x2mh3")
 
 [connection signal="area_entered" from="InteractionArea" to="QuestPrompt" method="_on_interaction_area_area_entered"]
 [connection signal="body_entered" from="InteractionArea" to="QuestPrompt" method="_on_interaction_area_body_entered"]

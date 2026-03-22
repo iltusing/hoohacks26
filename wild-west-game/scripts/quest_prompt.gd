@@ -1,6 +1,8 @@
 extends CanvasGroup
 
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
+@onready var coin_sound: AudioStreamPlayer = $AudioStreamPlayer
+
 
 var quest_started: bool = false
 var quest_completed: bool = false
@@ -31,6 +33,8 @@ func _on_interaction_area_body_entered(body: Node2D) -> void:
 		
 		bottles_ui.visible = false
 		bottles_label.text = "0"
+		
+		coin_sound.play()
 		coins_label.text = str(int(coins_label.text) + 4)
 
 	elif not quest_completed:
