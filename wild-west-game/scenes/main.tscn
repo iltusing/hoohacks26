@@ -3470,6 +3470,9 @@ position = Vector2(1436, 80)
 [node name="Enemy4" parent="." unique_id=14565927 instance=ExtResource("12_eb6dy")]
 position = Vector2(1104, 8)
 
+[node name="Enemy5" parent="." unique_id=478413964 instance=ExtResource("12_eb6dy")]
+position = Vector2(1151, 408)
+
 [node name="QuestNPC" parent="." unique_id=250329415 instance=ExtResource("16_muem4")]
 position = Vector2(1264, 401)
 
