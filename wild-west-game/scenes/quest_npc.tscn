@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dc08v5eg0nm3t"]
+
+[ext_resource type="Texture2D" uid="uid://c74gp2mrbupii" path="res://assets/npc/npc_idle.png" id="1_2wgef"]
+[ext_resource type="Script" path="res://scripts/quest_prompt.gd" id="2_x2mh3"]
+[ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="3_txcl6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k5lx"]
+atlas = ExtResource("1_2wgef")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rhlf"]
+atlas = ExtResource("1_2wgef")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ccxi"]
+atlas = ExtResource("1_2wgef")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn1jp"]
+atlas = ExtResource("1_2wgef")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3yr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k5lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rhlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ccxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn1jp")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k5lx"]
+size = Vector2(109, 52)
+
+[node name="QuestNPC" type="Node2D" unique_id=250329415]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1657802303]
+sprite_frames = SubResource("SpriteFrames_q3yr6")
+animation = &"default_idle"
+autoplay = "default_idle"
+frame_progress = 0.6447463
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1781676798]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1999166921]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_7k5lx")
+
+[node name="QuestPrompt" type="CanvasGroup" parent="." unique_id=816415705]
+script = ExtResource("2_x2mh3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="QuestPrompt" unique_id=412363828]
+visible = false
+offset_left = -22.0
+offset_top = -35.0
+offset_right = 27.0
+offset_bottom = 5.0
+theme_override_fonts/normal_font = ExtResource("3_txcl6")
+theme_override_font_sizes/normal_font_size = 4
+text = "Please bring me my 10 lost bottles scattered throughout the town or some other bs idk"
+
+[connection signal="area_entered" from="InteractionArea" to="QuestPrompt" method="_on_interaction_area_area_entered"]
+[connection signal="body_entered" from="InteractionArea" to="QuestPrompt" method="_on_interaction_area_body_entered"]
