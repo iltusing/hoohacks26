@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="wild-west-game"
+config/name="last-ride-out-of-town"
 run/main_scene="uid://bb45tt6exka7b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)

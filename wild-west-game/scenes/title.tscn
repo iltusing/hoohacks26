@@ -25,7 +25,9 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 60
-text = "Wild West Game"
+text = "Last Ride 
+Out Of Town"
+horizontal_alignment = 1
 
 [node name="author_container" type="CenterContainer" parent="MAIN" unique_id=969530833]
 layout_mode = 2
@@ -68,15 +70,25 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="title_container" type="CenterContainer" parent="CREDITS" unique_id=200567424]
+[node name="credit_container" type="CenterContainer" parent="CREDITS" unique_id=200567424]
 layout_mode = 2
-size_flags_vertical = 0
 
-[node name="title" type="Label" parent="CREDITS/title_container" unique_id=455517772]
+[node name="VBoxContainer" type="VBoxContainer" parent="CREDITS/credit_container" unique_id=1274223864]
+layout_mode = 2
+alignment = 1
+
+[node name="credits" type="Label" parent="CREDITS/credit_container/VBoxContainer" unique_id=455517772]
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 40
 text = "Credits"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CREDITS/credit_container/VBoxContainer" unique_id=2090820521]
+layout_mode = 2
+text = "https://fonts.google.com/specimen/Rye?preview.script=Latn"
+fit_content = true
 
 [node name="HSeparator" type="HSeparator" parent="CREDITS" unique_id=1379555331]
 custom_minimum_size = Vector2(0, 40)
