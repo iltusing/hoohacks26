@@ -1,8 +1,10 @@
-[gd_scene format=3 uid="uid://beji62yefo40t"]
+[gd_scene format=3 uid="uid://dlqucyt85tjp5"]
 
 [ext_resource type="PackedScene" uid="uid://cf7qgxcbo78ue" path="res://scenes/player.tscn" id="1_5rd3w"]
+[ext_resource type="Script" uid="uid://c5nayj2ha05fc" path="res://scripts/train_ending_spawner.gd" id="1_c8kt5"]
 [ext_resource type="Texture2D" uid="uid://cgcgq81b53yq1" path="res://assets/Yeehaw/sky_bg_parallax.png" id="1_jm6w1"]
 [ext_resource type="Texture2D" uid="uid://bhfq2w3umaww1" path="res://assets/Yeehaw/yeehaw_parallax_layerC_standard.png" id="2_5rd3w"]
+[ext_resource type="Script" uid="uid://cjrqpi8pvutig" path="res://scripts/train_ending_shake.gd" id="3_5d7d8"]
 [ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="3_tqdm5"]
 [ext_resource type="Texture2D" uid="uid://c6lkh66v4wqie" path="res://assets/Yeehaw/yeehaw_parallax_layerA_standard.png" id="4_2ynia"]
 [ext_resource type="Texture2D" uid="uid://xaiy0glusy4q" path="res://assets/coin.png" id="6_hul6t"]
@@ -17,6 +19,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c8kt5"]
 
 [node name="train_ending" type="Node2D" unique_id=1136302155]
+script = ExtResource("1_c8kt5")
 
 [node name="parallax" type="Node2D" parent="." unique_id=838267783]
 position = Vector2(369, 77)
@@ -31,21 +34,23 @@ texture = ExtResource("1_jm6w1")
 [node name="mountains" type="Parallax2D" parent="parallax" unique_id=1010103119]
 scroll_offset = Vector2(-3, -5)
 repeat_size = Vector2(128, 0)
-autoscroll = Vector2(-50, 0)
+autoscroll = Vector2(-30, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/mountains" unique_id=1223834688]
 texture = ExtResource("2_5rd3w")
+script = ExtResource("3_5d7d8")
 
 [node name="cactus" type="Parallax2D" parent="parallax" unique_id=204513007]
 scroll_offset = Vector2(-1, -4)
 repeat_size = Vector2(128, 0)
-autoscroll = Vector2(-70, 0)
+autoscroll = Vector2(-120, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/cactus" unique_id=1363007253]
 position = Vector2(0, 34)
 texture = ExtResource("3_tqdm5")
+script = ExtResource("3_5d7d8")
 
 [node name="train" type="Parallax2D" parent="parallax" unique_id=648928028]
 scroll_offset = Vector2(-1.0000005, 227)
@@ -55,6 +60,7 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="parallax/train" unique_id=1841540716]
 position = Vector2(-2, -165)
 texture = ExtResource("4_2ynia")
+script = ExtResource("3_5d7d8")
 
 [node name="Player" parent="." unique_id=1502754261 instance=ExtResource("1_5rd3w")]
 position = Vector2(402, 80)

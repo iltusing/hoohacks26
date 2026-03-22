@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died(enemy: Node)
+
 @export var walk_speed: float = 37.5
 @export var chase_speed: float = 37.5
 @export var jump_velocity: float = -220.0
@@ -169,6 +171,7 @@ func die() -> void:
 		return
 
 	is_dead = true
+	died.emit(self)
 	action_state = ActionState.DYING
 	velocity = Vector2.ZERO
 	collision_shape_2d.set_deferred("disabled", true)
