@@ -13,12 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://bj5g01poq8mwn" path="res://scenes/platform.tscn" id="9_85g3d"]
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://b5oww56gmffwm" path="res://assets/greenbottle.png" id="11_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dhwjymfmnc6an" path="res://scenes/enemy.tscn" id="12_eb6dy"]
 [ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scripts/saloon_enter.gd" id="15_jkv2x"]
-[ext_resource type="PackedScene" uid="uid://dtevmtfkvhkj" path="res://scenes/quest_npc.tscn" id="16_muem4"]
-[ext_resource type="PackedScene" uid="uid://d4d3onxinyswr" path="res://scenes/bottle.tscn" id="18_dp3eg"]
-[ext_resource type="PackedScene" uid="uid://bbpfoewfhp0dt" path="res://scenes/saloon.tscn" id="19_0ld40"]
+[ext_resource type="PackedScene" path="res://scenes/quest_npc.tscn" id="16_muem4"]
+[ext_resource type="PackedScene" path="res://scenes/bottle.tscn" id="18_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://bxvqnvab8nmn2" path="res://scenes/saloon.tscn" id="19_0ld40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
 texture = ExtResource("1_tbgi4")
@@ -3402,8 +3402,8 @@ scale = Vector2(5.1482034, -0.9662598)
 shape = SubResource("RectangleShape2D_tipki")
 
 [node name="Killzone4" parent="." unique_id=2005434353 instance=ExtResource("7_o6xl0")]
-position = Vector2(597, 26)
-scale = Vector2(1, 1.44)
+position = Vector2(597, 2)
+scale = Vector2(1, 2.9199986)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone4" unique_id=963155966]
 position = Vector2(6, 5)
@@ -3425,7 +3425,7 @@ collision_layer = 4
 collision_mask = 5
 
 [node name="Enemy1" parent="." unique_id=1724629270 instance=ExtResource("12_eb6dy")]
-position = Vector2(303, -80)
+position = Vector2(456, -79)
 
 [node name="Enemy2" parent="." unique_id=35640752 instance=ExtResource("12_eb6dy")]
 position = Vector2(1202, 88)
@@ -3437,7 +3437,7 @@ position = Vector2(1436, 80)
 position = Vector2(1104, 8)
 
 [node name="QuestNPC" parent="." unique_id=250329415 instance=ExtResource("16_muem4")]
-position = Vector2(80, -7)
+position = Vector2(1264, 401)
 
 [node name="saloonEnter" type="Area2D" parent="." unique_id=699431808]
 position = Vector2(1012, 6)
