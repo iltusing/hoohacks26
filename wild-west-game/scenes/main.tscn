@@ -10,10 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dd2policsuw1n" path="res://scenes/killzone.tscn" id="7_o6xl0"]
 [ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="8_85g3d"]
 [ext_resource type="Texture2D" uid="uid://xaiy0glusy4q" path="res://assets/coin.png" id="8_tipki"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="9_85g3d"]
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
 [ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://bj5g01poq8mwn" path="res://scenes/platform.tscn" id="9_85g3d"]
-[ext_resource type="PackedScene" uid="uid://1jg6jc4jkf62" path="res://scenes/enemy.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://dc08v5eg0nm3t" path="res://scenes/quest_npc.tscn" id="15_jkv2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("1_tbgi4")
@@ -3336,6 +3337,7 @@ shape = SubResource("RectangleShape2D_tipki")
 
 [node name="Coin" parent="." unique_id=1674890837 instance=ExtResource("11_ya4ey")]
 position = Vector2(58, -8)
+
 [node name="Killzone2" parent="." unique_id=1891375319 instance=ExtResource("7_o6xl0")]
 position = Vector2(366, -46.000008)
 scale = Vector2(1, 1.44)
@@ -3379,5 +3381,8 @@ collision_mask = 5
 
 [node name="Enemy1" parent="." unique_id=1724629270 instance=ExtResource("12_eb6dy")]
 position = Vector2(303, -80)
+
+[node name="QuestNPC" parent="." unique_id=250329415 instance=ExtResource("15_jkv2x")]
+position = Vector2(874, -56)
 
 [connection signal="body_entered" from="Killzone" to="Enemy1" method="_on_killzone_body_entered"]
