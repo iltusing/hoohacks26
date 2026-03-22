@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtevmtfkvhkj"]
 
 [ext_resource type="Texture2D" uid="uid://c74gp2mrbupii" path="res://assets/npc/npc_idle.png" id="1_2wgef"]
-[ext_resource type="Script" path="res://scripts/quest_prompt.gd" id="2_x2mh3"]
+[ext_resource type="Script" uid="uid://38fy077y5qyp" path="res://scripts/quest_prompt.gd" id="2_x2mh3"]
 [ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="3_txcl6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7k5lx"]
@@ -62,14 +62,16 @@ shape = SubResource("RectangleShape2D_7k5lx")
 script = ExtResource("2_x2mh3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="QuestPrompt" unique_id=412363828]
-visible = false
-offset_left = -22.0
-offset_top = -35.0
-offset_right = 27.0
-offset_bottom = 5.0
+offset_left = -30.0
+offset_top = -34.0
+offset_right = 38.0
+offset_bottom = 6.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_txcl6")
-theme_override_font_sizes/normal_font_size = 4
-text = "Please bring me my 10 lost bottles scattered throughout the town or some other bs idk"
+theme_override_font_sizes/normal_font_size = 3
+text = "You look like someone who needs coin.
+I’ve got a job- simple, if you’ve got the grit.
+Bring me 10 bottles of that green stuff… and I’ll make it worth your while."
 
 [connection signal="area_entered" from="InteractionArea" to="QuestPrompt" method="_on_interaction_area_area_entered"]
 [connection signal="body_entered" from="InteractionArea" to="QuestPrompt" method="_on_interaction_area_body_entered"]
