@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://beji62yefo40t"]
+
+[ext_resource type="PackedScene" uid="uid://cf7qgxcbo78ue" path="res://scenes/player.tscn" id="1_5rd3w"]
+[ext_resource type="Texture2D" uid="uid://cgcgq81b53yq1" path="res://assets/Yeehaw/sky_bg_parallax.png" id="1_jm6w1"]
+[ext_resource type="Texture2D" uid="uid://bhfq2w3umaww1" path="res://assets/Yeehaw/yeehaw_parallax_layerC_standard.png" id="2_5rd3w"]
+[ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="3_tqdm5"]
+[ext_resource type="Texture2D" uid="uid://c6lkh66v4wqie" path="res://assets/Yeehaw/yeehaw_parallax_layerA_standard.png" id="4_2ynia"]
+[ext_resource type="Texture2D" uid="uid://xaiy0glusy4q" path="res://assets/coin.png" id="6_hul6t"]
+[ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="7_5d7d8"]
+[ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="8_c8kt5"]
+[ext_resource type="Texture2D" uid="uid://b5oww56gmffwm" path="res://assets/greenbottle.png" id="9_jn1et"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hul6t"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5d7d8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c8kt5"]
+
+[node name="train_ending" type="Node2D" unique_id=1136302155]
+
+[node name="parallax" type="Node2D" parent="." unique_id=838267783]
+position = Vector2(369, 77)
+
+[node name="skybg" type="Parallax2D" parent="parallax" unique_id=1943924134]
+scale = Vector2(8, 8)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/skybg" unique_id=19525654]
+texture = ExtResource("1_jm6w1")
+
+[node name="mountains" type="Parallax2D" parent="parallax" unique_id=1010103119]
+scroll_offset = Vector2(-3, -5)
+repeat_size = Vector2(128, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/mountains" unique_id=1223834688]
+texture = ExtResource("2_5rd3w")
+
+[node name="cactus" type="Parallax2D" parent="parallax" unique_id=204513007]
+scroll_offset = Vector2(-1, -4)
+repeat_size = Vector2(128, 0)
+autoscroll = Vector2(-70, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/cactus" unique_id=1363007253]
+position = Vector2(0, 34)
+texture = ExtResource("3_tqdm5")
+
+[node name="train" type="Parallax2D" parent="parallax" unique_id=648928028]
+scroll_offset = Vector2(-1.0000005, 227)
+repeat_size = Vector2(128, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/train" unique_id=1841540716]
+position = Vector2(-2, -165)
+texture = ExtResource("4_2ynia")
+
+[node name="Player" parent="." unique_id=1502754261 instance=ExtResource("1_5rd3w")]
+position = Vector2(402, 80)
+
+[node name="UI" type="MarginContainer" parent="Player" unique_id=1537439683]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -55.0
+offset_right = 80.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/UI" unique_id=1560851930]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=1078365921]
+layout_mode = 2
+
+[node name="coin_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBoxContainer" unique_id=1392672944]
+layout_mode = 2
+texture = ExtResource("6_hul6t")
+expand_mode = 2
+
+[node name="COINS" type="Label" parent="Player/UI/VBoxContainer/HBoxContainer" unique_id=693721703]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_5d7d8")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=743823646]
+layout_mode = 2
+
+[node name="heart_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBoxContainer2" unique_id=2008807940]
+layout_mode = 2
+texture = ExtResource("8_c8kt5")
+expand_mode = 2
+
+[node name="HEALTH" type="Label" parent="Player/UI/VBoxContainer/HBoxContainer2" unique_id=1080750785]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_5d7d8")
+theme_override_font_sizes/font_size = 8
+text = "100"
+
+[node name="HBOX_BOTTLES" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=962414910]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="bottle_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBOX_BOTTLES" unique_id=205983904]
+layout_mode = 2
+texture = ExtResource("9_jn1et")
+expand_mode = 2
+
+[node name="BOTTLES" type="Label" parent="Player/UI/VBoxContainer/HBOX_BOTTLES" unique_id=1853234534]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_5d7d8")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="GAMEOVER" type="Label" parent="Player/UI" unique_id=891202921]
+unique_name_in_owner = true
+visible = false
+z_index = 5
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_5d7d8")
+theme_override_font_sizes/font_size = 25
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="boundaries" type="Node" parent="." unique_id=1734157310]
+
+[node name="floorboundary" type="StaticBody2D" parent="boundaries" unique_id=562709548]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/floorboundary" unique_id=550416422]
+position = Vector2(433, 117)
+shape = SubResource("WorldBoundaryShape2D_hul6t")
+
+[node name="rightboundary" type="StaticBody2D" parent="boundaries" unique_id=870612092]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/rightboundary" unique_id=436366987]
+position = Vector2(470.99994, 89)
+rotation = -1.5730755
+shape = SubResource("WorldBoundaryShape2D_5d7d8")
+
+[node name="leftboundary" type="StaticBody2D" parent="boundaries" unique_id=67115620]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundaries/leftboundary" unique_id=1939775903]
+position = Vector2(320, 96)
+rotation = 1.571845
+shape = SubResource("WorldBoundaryShape2D_c8kt5")
