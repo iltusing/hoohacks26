@@ -6,8 +6,10 @@ extends CharacterBody2D
 
 const BULLET_SCENE := preload("res://scenes/bullet.tscn")
 const BULLET_SPAWN_OFFSET := Vector2(0.0, 2.0)
+const MAX_HEALTH := 100
 var is_dead := false
 var is_climbing_ladder := false
+var health := MAX_HEALTH
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ladder_ray_cast: RayCast2D = $ladderRayCast
@@ -26,6 +28,7 @@ func _ready() -> void:
 	animated_sprite_2d.sprite_frames.set_animation_loop("reload", false)
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
 	animated_sprite_2d.play("idle")
+	_update_health_label()
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -105,6 +108,8 @@ func spawn_bullet() -> void:
 	var bullet_direction := -1.0 if animated_sprite_2d.flip_h else 1.0
 
 	bullet.direction = bullet_direction
+	bullet.owner_type = "player"
+	bullet.shooter = self
 	bullet.global_position = global_position + Vector2(BULLET_SPAWN_OFFSET.x * bullet_direction, BULLET_SPAWN_OFFSET.y)
 	bullet.scale.x = absf(bullet.scale.x) * bullet_direction
 	get_tree().current_scene.add_child(bullet)
@@ -156,3 +161,19 @@ func die():
 	
 	# Play death animation
 	animated_sprite_2d.play("die")
+
+func take_damage(amount: int) -> void:
+	if is_dead:
+		return
+
+	health = max(health - amount, 0)
+	_update_health_label()
+
+	if health == 0:
+		die()
+
+func _update_health_label() -> void:
+	var health_label := find_child("HEALTH", true, false) as Label
+
+	if health_label:
+		health_label.text = str(health)
