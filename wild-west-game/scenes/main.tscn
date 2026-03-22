@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cf7qgxcbo78ue" path="res://scenes/player.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dd2policsuw1n" path="res://scenes/killzone.tscn" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://dct0ocf53r0c8" path="res://scenes/coin.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="8_tipki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("1_tbgi4")
