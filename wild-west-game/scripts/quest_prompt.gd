@@ -39,7 +39,7 @@ func _on_interaction_area_body_entered(body: Node2D) -> void:
 		if int(coins_label.text) >= 20:
 			get_tree().change_scene_to_file("res://scenes/train_ending.tscn")
 
-	elif not quest_completed:
+	elif not quest_completed: 
 		rich_text_label.text = "I'm still waitin' on those 10 bottles."
 		rich_text_label.visible = true
 
