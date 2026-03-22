@@ -49,7 +49,7 @@ func _on_body_entered(body: Node) -> void:
 		queue_free()
 		return
 
-	if owner_type == "player" and body.has_method("die") and body.name == "CharacterBody2D":
+	if owner_type == "player" and body.has_method("die") and not body.is_in_group("player"):
 		body.die()
 		queue_free()
 		return
