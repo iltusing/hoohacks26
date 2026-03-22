@@ -197,7 +197,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_fjrip")
 }, {
 "duration": 0.7,
