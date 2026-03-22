@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://xaiy0glusy4q" path="res://assets/coin.png" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
 [ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://1jg6jc4jkf62" path="res://scenes/enemy.tscn" id="12_eb6dy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("1_tbgi4")
@@ -2603,7 +2604,7 @@ tile_set = SubResource("TileSet_lpvoh")
 
 [node name="Player" parent="." unique_id=1502754261 groups=["player"] instance=ExtResource("6_tefeu")]
 position = Vector2(0, -7)
-collision_layer = 5
+collision_layer = 4
 
 [node name="UI" type="MarginContainer" parent="Player" unique_id=179841201]
 anchors_preset = 15
@@ -2648,7 +2649,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_85g3d")
 theme_override_font_sizes/font_size = 8
-text = "0"
+text = "100"
 
 [node name="Killzone" parent="." unique_id=155024343 instance=ExtResource("7_o6xl0")]
 position = Vector2(141, 22)
@@ -2661,3 +2662,10 @@ shape = SubResource("RectangleShape2D_tipki")
 
 [node name="Coin" parent="." unique_id=1674890837 instance=ExtResource("11_ya4ey")]
 position = Vector2(58, -8)
+collision_layer = 4
+collision_mask = 5
+
+[node name="Enemy1" parent="." unique_id=1724629270 instance=ExtResource("12_eb6dy")]
+position = Vector2(303, -80)
+
+[connection signal="body_entered" from="Killzone" to="Enemy1" method="_on_killzone_body_entered"]
