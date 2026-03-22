@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cgcgq81b53yq1" path="res://assets/Yeehaw/sky_bg_parallax.png" id="3_pyl7j"]
 [ext_resource type="Texture2D" uid="uid://bhfq2w3umaww1" path="res://assets/Yeehaw/yeehaw_parallax_layerC_standard.png" id="4_b3w7a"]
 [ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="5_4rr2b"]
+[ext_resource type="Script" uid="uid://cjdv4e33qyilj" path="res://scripts/train_title.gd" id="5_yql1r"]
 [ext_resource type="Texture2D" uid="uid://c6lkh66v4wqie" path="res://assets/Yeehaw/yeehaw_parallax_layerA_standard.png" id="6_yql1r"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ignj"]
@@ -61,6 +62,7 @@ repeat_size = Vector2(1088, 0)
 position = Vector2(505, 266)
 scale = Vector2(8.5, 8.5)
 texture = ExtResource("6_yql1r")
+script = ExtResource("5_yql1r")
 
 [node name="MAIN" type="VBoxContainer" parent="." unique_id=1333544472]
 unique_name_in_owner = true
