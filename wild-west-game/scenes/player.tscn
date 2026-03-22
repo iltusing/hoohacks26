@@ -235,7 +235,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
-size = Vector2(12, 14)
+size = Vector2(8, 13)
 
 [node name="Player" type="CharacterBody2D" unique_id=1502754261]
 collision_mask = 5
@@ -243,11 +243,9 @@ script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=492711243]
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"die"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572601383]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_u8vuu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1895488682]
