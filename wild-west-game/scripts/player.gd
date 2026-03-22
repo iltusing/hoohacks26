@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var jump_velocity:= -300.0
 @export var gravity:= 900.0
 
+const BULLET_SCENE := preload("res://scenes/bullet.tscn")
+const BULLET_SPAWN_OFFSET := Vector2(0.0, 2.0)
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 enum ActionState {
@@ -32,6 +35,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("shoot") and action_state == ActionState.NONE:
 		action_state = ActionState.SHOOTING
+		spawn_bullet()
 		animated_sprite_2d.play("shoot")
 
 
@@ -72,3 +76,12 @@ func _on_animation_finished() -> void:
 	elif animated_sprite_2d.animation == "reload":
 		action_state = ActionState.NONE
 		update_visuals()
+
+func spawn_bullet() -> void:
+	var bullet := BULLET_SCENE.instantiate()
+	var bullet_direction := -1.0 if animated_sprite_2d.flip_h else 1.0
+
+	bullet.direction = bullet_direction
+	bullet.global_position = global_position + Vector2(BULLET_SPAWN_OFFSET.x * bullet_direction, BULLET_SPAWN_OFFSET.y)
+	bullet.scale.x = bullet_direction
+	get_tree().current_scene.add_child(bullet)
