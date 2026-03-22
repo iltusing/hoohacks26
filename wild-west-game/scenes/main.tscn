@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://b5oww56gmffwm" path="res://assets/greenbottle.png" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://dc08v5eg0nm3t" path="res://scenes/quest_npc.tscn" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://1jg6jc4jkf62" path="res://scenes/enemy.tscn" id="12_eb6dy"]
 [ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scenes/saloon_enter.gd" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://dtevmtfkvhkj" path="res://scenes/quest_npc.tscn" id="16_muem4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
 texture = ExtResource("1_tbgi4")
@@ -3417,8 +3417,8 @@ collision_mask = 5
 [node name="Enemy1" parent="." unique_id=1724629270 instance=ExtResource("12_eb6dy")]
 position = Vector2(303, -80)
 
-[node name="QuestNPC" parent="." unique_id=250329415 instance=ExtResource("15_jkv2x")]
-position = Vector2(78, -8)
+[node name="QuestNPC" parent="." unique_id=250329415 instance=ExtResource("16_muem4")]
+position = Vector2(80, -7)
 
 [node name="saloonEnter" type="Area2D" parent="." unique_id=699431808]
 position = Vector2(1012, 6)
