@@ -238,6 +238,7 @@ animations = [{
 size = Vector2(8, 13)
 
 [node name="Player" type="CharacterBody2D" unique_id=1502754261]
+z_index = 1
 collision_mask = 5
 script = ExtResource("1_3vyb7")
 
