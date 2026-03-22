@@ -3,10 +3,19 @@
 [ext_resource type="Script" uid="uid://dbttj38iwe6rj" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://44vubxn7uci7" path="res://assets/Cowboy_Sprite/Wild West Pixel Cowboy - Pixel Art Asset Pack/death/cowboy_death_spritesheet.png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://ckay3dd5s7ilv" path="res://assets/Cowboy_Sprite/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://bx7ni2ba84en5" path="res://assets/Cowboy_Sprite/Wild West Pixel Cowboy - Pixel Art Asset Pack/climb/cowboy_climb.png" id="2_smehm"]
 [ext_resource type="Texture2D" uid="uid://du30askglbppm" path="res://assets/Cowboy_Sprite/Wild West Pixel Cowboy - Pixel Art Asset Pack/walk/cowboy_walk_right-spritesheet.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://c0kj8b68g88bo" path="res://assets/Cowboy_Sprite/Wild West Pixel Cowboy - Pixel Art Asset Pack/jump/cowboy_jump.png" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bla8bn3doflvs" path="res://assets/Cowboy_Sprite/Wild West Pixel Cowboy - Pixel Art Asset Pack/attack & reload/cowboy_reload_right_spritesheet.png" id="4_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://nvs1ajuxo2p5" path="res://assets/Cowboy_Sprite/Wild West Pixel Cowboy - Pixel Art Asset Pack/attack & reload/cowboy_attack_right-spritesheet.png" id="6_fjrip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
+atlas = ExtResource("2_smehm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
+atlas = ExtResource("2_smehm")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
 atlas = ExtResource("2_fjrip")
@@ -106,6 +115,17 @@ region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31cv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf23h")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i4ail")
@@ -223,9 +243,6 @@ script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=492711243]
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"shoot"
-frame = 2
-frame_progress = 0.70223856
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572601383]
 shape = SubResource("RectangleShape2D_u8vuu")
