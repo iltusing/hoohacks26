@@ -161,6 +161,7 @@ func die():
 	
 	# Play death animation
 	animated_sprite_2d.play("die")
+	_return_to_title()
 
 func take_damage(amount: int) -> void:
 	if is_dead:
@@ -177,3 +178,9 @@ func _update_health_label() -> void:
 
 	if health_label:
 		health_label.text = str(health)
+
+func _return_to_title() -> void:
+	Engine.time_scale = 0.5
+	await get_tree().create_timer(1.0, true, false, true).timeout
+	Engine.time_scale = 1.0
+	get_tree().change_scene_to_file("res://scenes/title.tscn")
