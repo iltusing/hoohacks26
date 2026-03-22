@@ -87,7 +87,11 @@ horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CREDITS/credit_container/VBoxContainer" unique_id=2090820521]
 layout_mode = 2
-text = "https://fonts.google.com/specimen/Rye?preview.script=Latn"
+text = "https://fonts.google.com/specimen/Rye?preview.script=Latn
+https://cursed-offerings.itch.io/yeehaw
+https://grayger26.itch.io/wild-west-pixel-cowboy-pixel-art-asset-pack
+https://freddiepng.itch.io/wild-west-props-16x16
+https://lht-hhh.itch.io/gizmo-pixel-art"
 fit_content = true
 
 [node name="HSeparator" type="HSeparator" parent="CREDITS" unique_id=1379555331]
