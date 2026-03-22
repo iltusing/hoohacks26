@@ -2,6 +2,10 @@
 
 [ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="1_4ignj"]
 [ext_resource type="Script" uid="uid://dc2y5ilp8lsto" path="res://scripts/title.gd" id="1_wosw1"]
+[ext_resource type="Texture2D" uid="uid://cgcgq81b53yq1" path="res://assets/Yeehaw/sky_bg_parallax.png" id="3_pyl7j"]
+[ext_resource type="Texture2D" uid="uid://bhfq2w3umaww1" path="res://assets/Yeehaw/yeehaw_parallax_layerC_standard.png" id="4_b3w7a"]
+[ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="5_4rr2b"]
+[ext_resource type="Texture2D" uid="uid://c6lkh66v4wqie" path="res://assets/Yeehaw/yeehaw_parallax_layerA_standard.png" id="6_yql1r"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ignj"]
 
@@ -9,9 +13,54 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -65.0
+offset_right = -13.0
+offset_bottom = -65.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wosw1")
+
+[node name="Parallax" type="Node2D" parent="." unique_id=358293170]
+position = Vector2(53, 13)
+
+[node name="SkyBG" type="Parallax2D" parent="Parallax" unique_id=1254000809]
+scale = Vector2(1.7253752, -1.052491)
+scroll_offset = Vector2(-235.00002, 172)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/SkyBG" unique_id=1908384606]
+position = Vector2(285, 171)
+scale = Vector2(5, 5)
+texture = ExtResource("3_pyl7j")
+
+[node name="Mountains" type="Parallax2D" parent="Parallax" unique_id=1714779978]
+scroll_offset = Vector2(-14, -226)
+repeat_size = Vector2(1088, 0)
+autoscroll = Vector2(-70, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/Mountains" unique_id=1506900615]
+position = Vector2(284, 20.000002)
+scale = Vector2(8.5, 8.5)
+texture = ExtResource("4_b3w7a")
+
+[node name="Cacti" type="Parallax2D" parent="Parallax" unique_id=72978329]
+scroll_offset = Vector2(-1020, -111)
+repeat_size = Vector2(1088, 0)
+autoscroll = Vector2(-200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/Cacti" unique_id=1956201626]
+position = Vector2(272, 226)
+scale = Vector2(8.5, 8.5)
+texture = ExtResource("5_4rr2b")
+
+[node name="Train" type="Parallax2D" parent="Parallax" unique_id=501979523]
+scroll_offset = Vector2(-241, 118)
+repeat_size = Vector2(1088, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/Train" unique_id=958451567]
+position = Vector2(505, 266)
+scale = Vector2(8.5, 8.5)
+texture = ExtResource("6_yql1r")
 
 [node name="MAIN" type="VBoxContainer" parent="." unique_id=1333544472]
 unique_name_in_owner = true
@@ -25,8 +74,8 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 60
-text = "Last Ride 
-Out Of Town"
+text = "LAST RIDE
+OUT OF TOWN"
 horizontal_alignment = 1
 
 [node name="author_container" type="CenterContainer" parent="MAIN" unique_id=969530833]
@@ -107,11 +156,9 @@ theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 20
 text = "BACK"
 
-[node name="Parallax" type="Node2D" parent="." unique_id=358293170]
-
-[node name="Parallax2D" type="Parallax2D" parent="Parallax" unique_id=1254000809]
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/Parallax2D" unique_id=1908384606]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=968451833]
+position = Vector2(323, 134)
+zoom = Vector2(0.6, 0.6)
 
 [connection signal="pressed" from="MAIN/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MAIN/Credits" to="." method="_on_credits_pressed"]
