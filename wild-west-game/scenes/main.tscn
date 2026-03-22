@@ -3292,7 +3292,7 @@ tile_set = SubResource("TileSet_lpvoh")
 
 [node name="Player" parent="." unique_id=1502754261 groups=["player"] instance=ExtResource("6_tefeu")]
 z_index = 6
-position = Vector2(9, -7)
+position = Vector2(-48, -23)
 collision_layer = 4
 
 [node name="UI" type="MarginContainer" parent="Player" unique_id=179841201]
