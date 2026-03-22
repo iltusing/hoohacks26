@@ -10,6 +10,7 @@ const MAX_HEALTH := 100
 var is_dead := false
 var is_climbing_ladder := false
 var health := MAX_HEALTH
+var coins: int = 0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ladder_ray_cast: RayCast2D = $ladderRayCast
@@ -30,6 +31,7 @@ func _ready() -> void:
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
 	animated_sprite_2d.play("idle")
 	_update_health_label()
+	_update_coins_label()
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -175,11 +177,21 @@ func take_damage(amount: int) -> void:
 	if health == 0:
 		die()
 
+func add_coins(amount: int) -> void:
+	coins += amount
+	_update_coins_label()
+
 func _update_health_label() -> void:
 	var health_label := find_child("HEALTH", true, false) as Label
 
 	if health_label:
 		health_label.text = str(health)
+
+func _update_coins_label() -> void:
+	var coins_label := find_child("COINS", true, false) as Label
+
+	if coins_label:
+		coins_label.text = str(coins)
 
 func _return_to_title() -> void:
 	Engine.time_scale = 0.5

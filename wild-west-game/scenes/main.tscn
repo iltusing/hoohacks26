@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scripts/saloon_enter.gd" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dtevmtfkvhkj" path="res://scenes/quest_npc.tscn" id="16_muem4"]
 [ext_resource type="PackedScene" uid="uid://d4d3onxinyswr" path="res://scenes/bottle.tscn" id="18_dp3eg"]
-[ext_resource type="PackedScene" uid="uid://bxvqnvab8nmn2" path="res://scenes/saloon.tscn" id="19_0ld40"]
+[ext_resource type="PackedScene" uid="uid://bbpfoewfhp0dt" path="res://scenes/saloon.tscn" id="19_0ld40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
 texture = ExtResource("1_tbgi4")
@@ -3290,6 +3290,7 @@ tile_map_data = PackedByteArray("AAACAP//AgAIAAMAAAACAP7/AgAIAAIAAAALAP//AgAJAAM
 tile_set = SubResource("TileSet_lpvoh")
 
 [node name="Player" parent="." unique_id=1502754261 groups=["player"] instance=ExtResource("6_tefeu")]
+z_index = 6
 position = Vector2(9, -7)
 collision_layer = 4
 
