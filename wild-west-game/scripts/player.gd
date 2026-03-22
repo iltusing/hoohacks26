@@ -186,6 +186,9 @@ func take_damage(amount: int) -> void:
 
 func add_coins(amount: int) -> void:
 	coins += amount
+	var current_scene := get_tree().current_scene
+	if coins >= 20 and current_scene != null and current_scene.scene_file_path != "res://scenes/train_ending.tscn":
+		get_tree().change_scene_to_file("res://scenes/train_ending.tscn")
 	_update_coins_label()
 
 func _update_health_label() -> void:
