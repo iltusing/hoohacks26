@@ -15,9 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://b5oww56gmffwm" path="res://assets/greenbottle.png" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://1jg6jc4jkf62" path="res://scenes/enemy.tscn" id="12_eb6dy"]
-[ext_resource type="Script" path="res://scenes/saloon_enter.gd" id="15_jkv2x"]
-[ext_resource type="PackedScene" path="res://scenes/quest_npc.tscn" id="16_muem4"]
-[ext_resource type="PackedScene" path="res://scenes/bottle.tscn" id="18_dp3eg"]
+[ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scenes/saloon_enter.gd" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://dtevmtfkvhkj" path="res://scenes/quest_npc.tscn" id="16_muem4"]
+[ext_resource type="PackedScene" uid="uid://d4d3onxinyswr" path="res://scenes/bottle.tscn" id="18_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://bbpfoewfhp0dt" path="res://scenes/saloon.tscn" id="19_0ld40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
 texture = ExtResource("1_tbgi4")
@@ -3283,7 +3284,7 @@ tile_map_data = PackedByteArray("AAACAP//AgAIAAMAAAACAP7/AgAIAAIAAAALAP//AgAJAAM
 tile_set = SubResource("TileSet_lpvoh")
 
 [node name="Player" parent="." unique_id=1502754261 groups=["player"] instance=ExtResource("6_tefeu")]
-position = Vector2(485, -87)
+position = Vector2(9, -7)
 collision_layer = 4
 
 [node name="UI" type="MarginContainer" parent="Player" unique_id=179841201]
@@ -3435,8 +3436,18 @@ position = Vector2(80, -7)
 position = Vector2(1012, 6)
 collision_mask = 5
 script = ExtResource("15_jkv2x")
+spawn_path = NodePath("../saloon/Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="saloonEnter" unique_id=863149046]
+shape = SubResource("RectangleShape2D_jkv2x")
+
+[node name="saloonExit" type="Area2D" parent="." unique_id=225250832]
+position = Vector2(1011, 403)
+collision_mask = 5
+script = ExtResource("15_jkv2x")
+spawn_path = NodePath("../saloonEnter")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saloonExit" unique_id=1701309357]
 shape = SubResource("RectangleShape2D_jkv2x")
 
 [node name="bottle" parent="." unique_id=384022944 instance=ExtResource("18_dp3eg")]
@@ -3460,6 +3471,14 @@ position = Vector2(1362, -23)
 [node name="bottle7" parent="." unique_id=18587718 instance=ExtResource("18_dp3eg")]
 position = Vector2(1026, -47)
 
+[node name="saloon" parent="." unique_id=1911099443 instance=ExtResource("19_0ld40")]
+position = Vector2(1094, 398)
+
+[node name="Marker2D" type="Marker2D" parent="saloon" unique_id=390555427]
+position = Vector2(-84, 5)
+
 [connection signal="body_entered" from="Killzone" to="Enemy1" method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="saloonEnter" to="saloonEnter" method="_on_body_entered"]
 [connection signal="body_exited" from="saloonEnter" to="saloonEnter" method="_on_body_exited"]
+[connection signal="body_entered" from="saloonExit" to="saloonExit" method="_on_body_entered"]
+[connection signal="body_exited" from="saloonExit" to="saloonExit" method="_on_body_exited"]
