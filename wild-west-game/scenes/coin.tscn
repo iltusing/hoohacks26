@@ -1,75 +1,64 @@
-[gd_scene format=3 uid="uid://brhi28weu02n2"]
+[gd_scene format=3 uid="uid://dct0ocf53r0c8"]
 
-[ext_resource type="Script" uid="uid://cjbqxf5c21vrt" path="res://scripts/coin.gd" id="1_kfxoj"]
-[ext_resource type="Texture2D" uid="uid://ccue3v6u0yw3s" path="res://assets/Coins/item57.png" id="1_xmuha"]
-[ext_resource type="Texture2D" uid="uid://dwtjwk8ngurj7" path="res://assets/Coins/item58.png" id="2_kfxoj"]
-[ext_resource type="Texture2D" uid="uid://b4lfsvi3ewlwp" path="res://assets/Coins/item59.png" id="3_jsmju"]
-[ext_resource type="Texture2D" uid="uid://cytx437sh3s4g" path="res://assets/Coins/item60.png" id="4_s0mny"]
-[ext_resource type="Texture2D" uid="uid://dy0rm723tuy0f" path="res://assets/Coins/item61.png" id="5_7cc30"]
-[ext_resource type="Texture2D" uid="uid://bkt4546k5sdw6" path="res://assets/Coins/item62.png" id="6_rojmm"]
-[ext_resource type="Texture2D" uid="uid://cohwox4qk3wlu" path="res://assets/Coins/item63.png" id="7_ls27i"]
-[ext_resource type="Texture2D" uid="uid://bvnonmi3hav6h" path="res://assets/Coins/item64.png" id="8_ssuvv"]
-[ext_resource type="AudioStream" uid="uid://cpd1qvl3wgybk" path="res://assets/Sfx/coinsfx.wav" id="10_jsmju"]
-[gd_scene format=3 uid="uid://bnmvwdgll7ig6"]
+[ext_resource type="Script" uid="uid://drcijk3hxa4vs" path="res://scenes/coin.gd" id="1_jsmju"]
+[ext_resource type="Texture2D" uid="uid://ccue3v6u0yw3s" path="res://assets/Coins/item57.png" id="1_te2np"]
+[ext_resource type="Texture2D" uid="uid://dwtjwk8ngurj7" path="res://assets/Coins/item58.png" id="2_m1j4n"]
+[ext_resource type="Texture2D" uid="uid://b4lfsvi3ewlwp" path="res://assets/Coins/item59.png" id="3_v1mwu"]
+[ext_resource type="Texture2D" uid="uid://cytx437sh3s4g" path="res://assets/Coins/item60.png" id="4_uf4yh"]
+[ext_resource type="Texture2D" uid="uid://dy0rm723tuy0f" path="res://assets/Coins/item61.png" id="5_ciu18"]
+[ext_resource type="Texture2D" uid="uid://bkt4546k5sdw6" path="res://assets/Coins/item62.png" id="6_ybu58"]
+[ext_resource type="Texture2D" uid="uid://cohwox4qk3wlu" path="res://assets/Coins/item63.png" id="7_s5w7y"]
+[ext_resource type="Texture2D" uid="uid://bvnonmi3hav6h" path="res://assets/Coins/item64.png" id="8_relgi"]
+[ext_resource type="AudioStream" uid="uid://cpd1qvl3wgybk" path="res://assets/Sfx/coinsfx.wav" id="10_v1mwu"]
 
-[ext_resource type="Script" path="res://scripts/coin.gd" id="1_kfxoj"]
-[ext_resource type="Texture2D" path="res://assets/Coins/item57.png" id="1_xmuha"]
-[ext_resource type="Texture2D" path="res://assets/Coins/item58.png" id="2_kfxoj"]
-[ext_resource type="Texture2D" path="res://assets/Coins/item59.png" id="3_jsmju"]
-[ext_resource type="Texture2D" path="res://assets/Coins/item60.png" id="4_s0mny"]
-[ext_resource type="Texture2D" path="res://assets/Coins/item61.png" id="5_7cc30"]
-[ext_resource type="Texture2D" path="res://assets/Coins/item62.png" id="6_rojmm"]
-[ext_resource type="Texture2D" path="res://assets/Coins/item63.png" id="7_ls27i"]
-[ext_resource type="Texture2D" path="res://assets/Coins/item64.png" id="8_ssuvv"]
-[ext_resource type="AudioStream" path="res://assets/Sfx/coinsfx.wav" id="10_jsmju"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6jg3o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3gef1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xmuha")
+"texture": ExtResource("1_te2np")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_kfxoj")
+"texture": ExtResource("2_m1j4n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_jsmju")
+"texture": ExtResource("3_v1mwu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_s0mny")
+"texture": ExtResource("4_uf4yh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_7cc30")
+"texture": ExtResource("5_ciu18")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_rojmm")
+"texture": ExtResource("6_ybu58")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_ls27i")
+"texture": ExtResource("7_s5w7y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_ssuvv")
+"texture": ExtResource("8_relgi")
 }],
 "loop": true,
 "name": &"coin",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xmuha"]
-radius = 4.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_4rshd"]
+radius = 5.0990195
 
-[node name="Coin" type="Area2D" unique_id=1246259656]
-script = ExtResource("1_kfxoj")
+[node name="Coin" type="Area2D" unique_id=1674890837]
+script = ExtResource("1_jsmju")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=32686220]
-sprite_frames = SubResource("SpriteFrames_6jg3o")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1858853821]
+sprite_frames = SubResource("SpriteFrames_3gef1")
 animation = &"coin"
-frame_progress = 0.9784772
+autoplay = "coin"
+frame_progress = 0.0918953
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1939733208]
-shape = SubResource("CircleShape2D_xmuha")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2031895655]
+shape = SubResource("CircleShape2D_4rshd")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=806859062]
-stream = ExtResource("10_jsmju")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1304948219]
+stream = ExtResource("10_v1mwu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

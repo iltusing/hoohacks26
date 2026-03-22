@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cf7qgxcbo78ue" path="res://scenes/player.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dd2policsuw1n" path="res://scenes/killzone.tscn" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://brhi28weu02n2" path="res://scenes/coin.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://dct0ocf53r0c8" path="res://scenes/coin.tscn" id="8_tipki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("1_tbgi4")
@@ -2611,5 +2611,5 @@ position = Vector2(7.119278, 7.250004)
 scale = Vector2(5.1482034, -0.96625984)
 shape = SubResource("RectangleShape2D_tipki")
 
-[node name="Coin" parent="." unique_id=1246259656 instance=ExtResource("8_tipki")]
-position = Vector2(77, -8)
+[node name="Coin" parent="." unique_id=1674890837 instance=ExtResource("8_tipki")]
+position = Vector2(60, -11)
