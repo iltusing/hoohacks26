@@ -25,7 +25,9 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 60
-text = "Wild West Game"
+text = "Last Ride 
+Out Of Town"
+horizontal_alignment = 1
 
 [node name="author_container" type="CenterContainer" parent="MAIN" unique_id=969530833]
 layout_mode = 2
@@ -68,11 +70,11 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="title_container" type="CenterContainer" parent="CREDITS" unique_id=200567424]
+[node name="credit_container" type="CenterContainer" parent="CREDITS" unique_id=200567424]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="title" type="Label" parent="CREDITS/title_container" unique_id=455517772]
+[node name="credits" type="Label" parent="CREDITS/credit_container" unique_id=455517772]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 40
