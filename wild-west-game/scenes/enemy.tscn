@@ -156,11 +156,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44cfe"]
-size = Vector2(14, 16)
+size = Vector2(14, 14)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1724629270]
 collision_layer = 8
-collision_mask = 1
 script = ExtResource("1_0ymjr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1391658167]
@@ -168,16 +167,13 @@ sprite_frames = SubResource("SpriteFrames_lhvu3")
 animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1278723566]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_44cfe")
 
 [node name="LeftGroundCheck" type="RayCast2D" parent="." unique_id=95401456]
 position = Vector2(-7, 0)
 target_position = Vector2(0, 12)
-collision_mask = 1
-enabled = true
 
 [node name="RightGroundCheck" type="RayCast2D" parent="." unique_id=1084617928]
 position = Vector2(7, 0)
 target_position = Vector2(0, 12)
-collision_mask = 1
-enabled = true

@@ -24,6 +24,7 @@ enum ActionState {
 var action_state: ActionState = ActionState.NONE
 
 func _ready() -> void:
+	%GAMEOVER.visible = false
 	animated_sprite_2d.sprite_frames.set_animation_loop("shoot", false)
 	animated_sprite_2d.sprite_frames.set_animation_loop("reload", false)
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
@@ -155,6 +156,7 @@ func die():
 	if is_dead:
 		return
 	
+	%GAMEOVER.visible = true
 	is_dead = true
 	
 	velocity = Vector2.ZERO
@@ -181,6 +183,6 @@ func _update_health_label() -> void:
 
 func _return_to_title() -> void:
 	Engine.time_scale = 0.5
-	await get_tree().create_timer(1.0, true, false, true).timeout
+	await get_tree().create_timer(4.0, true, false, true).timeout
 	Engine.time_scale = 1.0
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
