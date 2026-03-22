@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://xaiy0glusy4q" path="res://assets/coin.png" id="8_tipki"]
 [ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="9_85g3d"]
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
+[ext_resource type="Texture2D" uid="uid://b5oww56gmffwm" path="res://assets/greenbottle.png" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://dc08v5eg0nm3t" path="res://scenes/quest_npc.tscn" id="15_jkv2x"]
@@ -3326,6 +3327,23 @@ theme_override_fonts/font = ExtResource("8_85g3d")
 theme_override_font_sizes/font_size = 8
 text = "100"
 
+[node name="HBOX_BOTTLES" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=433098259]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="bottle_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBOX_BOTTLES" unique_id=261130579]
+layout_mode = 2
+texture = ExtResource("11_jbj1t")
+expand_mode = 2
+
+[node name="BOTTLES" type="Label" parent="Player/UI/VBoxContainer/HBOX_BOTTLES" unique_id=1754056961]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_85g3d")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
 [node name="Killzone" parent="." unique_id=155024343 instance=ExtResource("7_o6xl0")]
 position = Vector2(141, 24)
 scale = Vector2(1, 1.2)
@@ -3383,6 +3401,6 @@ collision_mask = 5
 position = Vector2(303, -80)
 
 [node name="QuestNPC" parent="." unique_id=250329415 instance=ExtResource("15_jkv2x")]
-position = Vector2(874, -56)
+position = Vector2(78, -8)
 
 [connection signal="body_entered" from="Killzone" to="Enemy1" method="_on_killzone_body_entered"]

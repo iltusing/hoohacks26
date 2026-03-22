@@ -14,3 +14,4 @@ func _process(_delta: float) -> void:
 func _on_interaction_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		rich_text_label.visible = true
+		get_tree().current_scene.get_node("%HBOX_BOTTLES").visible = true
