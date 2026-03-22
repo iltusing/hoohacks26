@@ -15,9 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://b5oww56gmffwm" path="res://assets/greenbottle.png" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://1jg6jc4jkf62" path="res://scenes/enemy.tscn" id="12_eb6dy"]
-[ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scenes/saloon_enter.gd" id="15_jkv2x"]
-[ext_resource type="PackedScene" uid="uid://dtevmtfkvhkj" path="res://scenes/quest_npc.tscn" id="16_muem4"]
-[ext_resource type="PackedScene" uid="uid://d4d3onxinyswr" path="res://scenes/bottle.tscn" id="18_dp3eg"]
+[ext_resource type="Script" path="res://scenes/saloon_enter.gd" id="15_jkv2x"]
+[ext_resource type="PackedScene" path="res://scenes/quest_npc.tscn" id="16_muem4"]
+[ext_resource type="PackedScene" path="res://scenes/bottle.tscn" id="18_dp3eg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
 texture = ExtResource("1_tbgi4")
