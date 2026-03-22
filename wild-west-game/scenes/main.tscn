@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://b5oww56gmffwm" path="res://assets/greenbottle.png" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://dhwjymfmnc6an" path="res://scenes/enemy.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://1jg6jc4jkf62" path="res://scenes/enemy.tscn" id="12_eb6dy"]
 [ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scripts/saloon_enter.gd" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dtevmtfkvhkj" path="res://scenes/quest_npc.tscn" id="16_muem4"]
 [ext_resource type="PackedScene" uid="uid://d4d3onxinyswr" path="res://scenes/bottle.tscn" id="18_dp3eg"]
@@ -3364,7 +3364,7 @@ unique_name_in_owner = true
 visible = false
 z_index = 5
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0.592448, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_85g3d")
 theme_override_font_sizes/font_size = 25
