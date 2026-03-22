@@ -1,17 +1,42 @@
 extends CanvasGroup
+
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
+var quest_started: bool = false
+var quest_completed: bool = false
 
 func _on_interaction_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if not body.is_in_group("player"):
+		return
+	
+	var bottles_label = get_tree().current_scene.get_node("%BOTTLES")
+	var coins_label = get_tree().current_scene.get_node("%COINS")
+	var bottles_ui = get_tree().current_scene.get_node("%HBOX_BOTTLES")
+	
+	var bottle_count = int(bottles_label.text)
+
+	if not quest_started:
+		quest_started = true
+		rich_text_label.text = "Hey, bring me 10 bottles of Cowboy Juice!"
 		rich_text_label.visible = true
-		get_tree().current_scene.get_node("%HBOX_BOTTLES").visible = true
+		bottles_ui.visible = true
+		
+		for potion in get_tree().get_nodes_in_group("quest_potions"):
+			potion.set_unlocked(true)
+
+	elif not quest_completed and bottle_count >= 10:
+		quest_completed = true
+		rich_text_label.text = "Much obliged! Here's your pay."
+		rich_text_label.visible = true
+		
+		bottles_ui.visible = false
+		bottles_label.text = "0"
+		coins_label.text = str(int(coins_label.text) + 4)
+
+	elif not quest_completed:
+		rich_text_label.text = "I'm still waitin' on those 10 bottles."
+		rich_text_label.visible = true
+
+	else:
+		rich_text_label.text = "Pleasure doin' business with ya."
+		rich_text_label.visible = true
