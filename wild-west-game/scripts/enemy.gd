@@ -12,6 +12,7 @@ extends CharacterBody2D
 @export var stop_distance: float = 18.0
 
 const BULLET_SCENE := preload("res://scenes/bullet.tscn")
+const COIN_SCENE := preload("res://scenes/coin.tscn")
 const BULLET_SPAWN_OFFSET := Vector2(10.0, 1.0)
 
 enum ActionState {
@@ -22,6 +23,7 @@ enum ActionState {
 }
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var left_ground_check: RayCast2D = $LeftGroundCheck
 @onready var right_ground_check: RayCast2D = $RightGroundCheck
 
@@ -158,6 +160,9 @@ func _on_animation_finished() -> void:
 		animated_sprite_2d.play("reload")
 	elif animated_sprite_2d.animation == "reload" and action_state == ActionState.RELOADING:
 		action_state = ActionState.NONE
+	elif animated_sprite_2d.animation == "die" and action_state == ActionState.DYING:
+		_drop_coin()
+		queue_free()
 
 func die() -> void:
 	if is_dead:
@@ -166,7 +171,13 @@ func die() -> void:
 	is_dead = true
 	action_state = ActionState.DYING
 	velocity = Vector2.ZERO
+	collision_shape_2d.set_deferred("disabled", true)
 	animated_sprite_2d.play("die")
+
+func _drop_coin() -> void:
+	var coin := COIN_SCENE.instantiate()
+	coin.global_position = global_position
+	get_tree().current_scene.add_child(coin)
 
 
 func _on_killzone_body_entered(body: Node2D) -> void:
