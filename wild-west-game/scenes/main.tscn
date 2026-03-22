@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cf7qgxcbo78ue" path="res://scenes/player.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dd2policsuw1n" path="res://scenes/killzone.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://brhi28weu02n2" path="res://scenes/coin.tscn" id="8_tipki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("1_tbgi4")
@@ -2597,7 +2598,7 @@ z_index = -1
 tile_map_data = PackedByteArray("AAACAP//AgAIAAMAAAACAP7/AgAIAAIAAAALAP//AgAJAAMAAAAXAP7/AgAIAAIAAAAXAP//AgAIAAMAAAAYAP//BAANAAEAAAAEAP7/AgAJAAoAAAAEAP//AgAJAAsAAAAFAP7/AgAKAAoAAAAFAP//AgAKAAsAAAAaAP7/AgANAAoAAAAaAP//AgANAAsAAAAbAP7/AgAOAAoAAAAbAP//AgAOAAsAAAAdAPf/AAAuAAcAAAAdAPj/AAAuAAgAAAAdAPn/AAAuAAkAAAAdAPr/AAAuAAoAAAAdAPv/AAAuAAsAAAAdAPz/AAAuAAwAAAAdAP3/AAAuAA0AAAAdAP7/AAAuAA4AAAAdAP//AAAuAA8AAAAeAPf/AAAvAAcAAAAeAPj/AAAvAAgAAAAeAPn/AAAvAAkAAAAeAPr/AAAvAAoAAAAeAPv/AAAvAAsAAAAeAPz/AAAvAAwAAAAeAP3/AAAvAA0AAAAeAP7/AAAvAA4AAAAeAP//AAAvAA8AAAAdAPb/AAAuAAYAAAAeAPb/AAAvAAYAAAA=")
 tile_set = SubResource("TileSet_lpvoh")
 
-[node name="Player" parent="." unique_id=1502754261 instance=ExtResource("6_tefeu")]
+[node name="Player" parent="." unique_id=1502754261 groups=["player"] instance=ExtResource("6_tefeu")]
 position = Vector2(0, -7)
 collision_layer = 5
 
@@ -2609,3 +2610,6 @@ scale = Vector2(1, 1.2)
 position = Vector2(7.119278, 7.250004)
 scale = Vector2(5.1482034, -0.96625984)
 shape = SubResource("RectangleShape2D_tipki")
+
+[node name="Coin" parent="." unique_id=1246259656 instance=ExtResource("8_tipki")]
+position = Vector2(77, -8)
