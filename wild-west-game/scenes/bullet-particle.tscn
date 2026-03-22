@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://syiyu32xkc4d"]
+
+[ext_resource type="Script" uid="uid://b4wbfpln2gf1e" path="res://scripts/bullet_particle.gd" id="1_khesh"]
+[ext_resource type="Texture2D" uid="uid://i5if283ar7rq" path="res://assets/bullet-trail.png" id="2_abop3"]
+
+[node name="BulletParticle" type="Node2D" unique_id=1708827073]
+script = ExtResource("1_khesh")
+
+[node name="particle" type="Sprite2D" parent="." unique_id=1756128258]
+texture = ExtResource("2_abop3")

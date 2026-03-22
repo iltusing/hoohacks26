@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djbpjvklcwbl"]
 
-[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_2nwx0"]
+[ext_resource type="Script" uid="uid://csnap8np2jtfo" path="res://scripts/bullet.gd" id="1_2nwx0"]
 [ext_resource type="Texture2D" uid="uid://bm1lbwcbsb1lj" path="res://assets/bullet.png" id="1_mkf8s"]
 
 [node name="Bullet" type="Node2D" unique_id=696791849]

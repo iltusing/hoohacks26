@@ -83,5 +83,5 @@ func spawn_bullet() -> void:
 
 	bullet.direction = bullet_direction
 	bullet.global_position = global_position + Vector2(BULLET_SPAWN_OFFSET.x * bullet_direction, BULLET_SPAWN_OFFSET.y)
-	bullet.scale.x = bullet_direction
+	bullet.scale.x = absf(bullet.scale.x) * bullet_direction
 	get_tree().current_scene.add_child(bullet)
