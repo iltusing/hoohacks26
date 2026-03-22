@@ -64,7 +64,7 @@ func _on_enemy_died(_enemy: Node) -> void:
 
 func _try_finish() -> void:
 	if _spawned_enemies >= total_enemies_to_spawn and _alive_enemies == 0:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://scenes/ending.tscn")
 
 func _resolve_player() -> Node2D:
 	var player := get_tree().get_first_node_in_group("player") as Node2D

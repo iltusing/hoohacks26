@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c7smsut6apnu4"]
+
+[ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="1_mqjok"]
+
+[node name="Ending" type="MarginContainer" unique_id=248947816]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1000597105]
+layout_mode = 2
+color = Color(0.8392939, 0.4309421, 5.7756904e-07, 1)
+
+[node name="MAIN" type="VBoxContainer" parent="." unique_id=1474293534]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="title_container" type="CenterContainer" parent="MAIN" unique_id=1566997669]
+layout_mode = 2
+
+[node name="title" type="Label" parent="MAIN/title_container" unique_id=1367103026]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("1_mqjok")
+theme_override_font_sizes/font_size = 80
+text = "You Won!"
+horizontal_alignment = 1
+
+[node name="author_container" type="CenterContainer" parent="MAIN" unique_id=1141154748]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="authors" type="Label" parent="MAIN/author_container" unique_id=1835435362]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_fonts/font = ExtResource("1_mqjok")
+theme_override_font_sizes/font_size = 20
+text = "Thank you for playing!"
