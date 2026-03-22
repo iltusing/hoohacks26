@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bkt4546k5sdw6" path="res://assets/Coins/item62.png" id="6_rojmm"]
 [ext_resource type="Texture2D" uid="uid://cohwox4qk3wlu" path="res://assets/Coins/item63.png" id="7_ls27i"]
 [ext_resource type="Texture2D" uid="uid://bvnonmi3hav6h" path="res://assets/Coins/item64.png" id="8_ssuvv"]
+[ext_resource type="AudioStream" uid="uid://cpd1qvl3wgybk" path="res://assets/Sfx/coinsfx.wav" id="10_jsmju"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6jg3o"]
 animations = [{
@@ -55,5 +56,8 @@ frame_progress = 0.9784772
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1939733208]
 shape = SubResource("CircleShape2D_xmuha")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=806859062]
+stream = ExtResource("10_jsmju")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
