@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cf7qgxcbo78ue"]
+[gd_scene format=3 uid="uid://dfe5mgb77vd44"]
 
 [ext_resource type="Script" uid="uid://dbttj38iwe6rj" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://ckay3dd5s7ilv" path="res://assets/Cowboy_Sprite/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="2_g2els"]
@@ -132,13 +132,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fjrip")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_smehm")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_ur7pv")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_y4r1p")
 }],
 "loop": true,
@@ -167,17 +167,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
-size = Vector2(6, 14)
+size = Vector2(16, 14)
 
 [node name="Player" type="CharacterBody2D" unique_id=1502754261]
 script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=492711243]
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"fall"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572601383]
 shape = SubResource("RectangleShape2D_u8vuu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1895488682]
 scale = Vector2(0.73257834, 0.7544086)
+offset = Vector2(0, -10)
+zoom = Vector2(4, 4)
