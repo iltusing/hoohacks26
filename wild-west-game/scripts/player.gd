@@ -64,11 +64,18 @@ func _physics_process(delta: float) -> void:
 
 	
 func _movement(direction: float) -> void:
+	animated_sprite_2d.speed_scale = 1.0
+
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
-	
+
+	if direction:
+		velocity.x = direction * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+
 	if action_state != ActionState.NONE:
 		return
 
@@ -81,11 +88,6 @@ func _movement(direction: float) -> void:
 		animated_sprite_2d.play("idle")
 	else:
 		animated_sprite_2d.play("run")
-
-	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
 
 func _on_animation_finished() -> void:
 	if animated_sprite_2d.animation == "shoot":
@@ -137,9 +139,12 @@ func _update_ladder_animation(direction: Vector2) -> void:
 		return
 
 	if direction == Vector2.ZERO:
-		animated_sprite_2d.play("idle")
+		if animated_sprite_2d.animation != "climb":
+			animated_sprite_2d.play("climb")
+		animated_sprite_2d.speed_scale = 0.0
 	else:
-		animated_sprite_2d.play("fall")
+		animated_sprite_2d.speed_scale = 1.0
+		animated_sprite_2d.play("climb")
 
 func die():
 	if is_dead:
