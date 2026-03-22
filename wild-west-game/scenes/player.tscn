@@ -113,3 +113,8 @@ shape = SubResource("RectangleShape2D_u8vuu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1895488682]
 scale = Vector2(0.73257834, 0.7544086)
+
+[node name="ladderRayCast" type="RayCast2D" parent="." unique_id=240843866]
+target_position = Vector2(0, -10)
+collision_mask = 2
+hit_from_inside = true
