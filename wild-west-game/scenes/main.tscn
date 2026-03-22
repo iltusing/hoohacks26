@@ -10,11 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://dd2policsuw1n" path="res://scenes/killzone.tscn" id="7_o6xl0"]
 [ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="8_85g3d"]
 [ext_resource type="Texture2D" uid="uid://xaiy0glusy4q" path="res://assets/coin.png" id="8_tipki"]
-[ext_resource type="PackedScene" uid="uid://bj5g01poq8mwn" path="res://scenes/platform.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="9_85g3d"]
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
+[ext_resource type="Texture2D" uid="uid://b5oww56gmffwm" path="res://assets/greenbottle.png" id="11_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://1jg6jc4jkf62" path="res://scenes/enemy.tscn" id="12_eb6dy"]
-[ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scenes/saloon_enter.gd" id="15_jkv2x"]
+[ext_resource type="Script" path="res://scenes/saloon_enter.gd" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://dc08v5eg0nm3t" path="res://scenes/quest_npc.tscn" id="16_muem4"]
+[ext_resource type="PackedScene" uid="uid://d4d3onxinyswr" path="res://scenes/bottle.tscn" id="18_dp3eg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
 texture = ExtResource("1_tbgi4")
@@ -3330,6 +3333,24 @@ theme_override_fonts/font = ExtResource("8_85g3d")
 theme_override_font_sizes/font_size = 8
 text = "100"
 
+[node name="HBOX_BOTTLES" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=433098259]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="bottle_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBOX_BOTTLES" unique_id=261130579]
+layout_mode = 2
+texture = ExtResource("11_jbj1t")
+expand_mode = 2
+
+[node name="BOTTLES" type="Label" parent="Player/UI/VBoxContainer/HBOX_BOTTLES" unique_id=1754056961]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_85g3d")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
 [node name="GAMEOVER" type="Label" parent="Player/UI" unique_id=1640661753]
 unique_name_in_owner = true
 visible = false
@@ -3398,6 +3419,9 @@ collision_mask = 5
 [node name="Enemy1" parent="." unique_id=1724629270 instance=ExtResource("12_eb6dy")]
 position = Vector2(303, -80)
 
+[node name="QuestNPC" parent="." unique_id=250329415 instance=ExtResource("16_muem4")]
+position = Vector2(80, -7)
+
 [node name="saloonEnter" type="Area2D" parent="." unique_id=699431808]
 position = Vector2(1012, 6)
 collision_mask = 5
@@ -3405,6 +3429,9 @@ script = ExtResource("15_jkv2x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="saloonEnter" unique_id=863149046]
 shape = SubResource("RectangleShape2D_jkv2x")
+
+[node name="bottle" parent="." unique_id=384022944 instance=ExtResource("18_dp3eg")]
+position = Vector2(-44, -10)
 
 [connection signal="body_entered" from="Killzone" to="Enemy1" method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="saloonEnter" to="saloonEnter" method="_on_body_entered"]
