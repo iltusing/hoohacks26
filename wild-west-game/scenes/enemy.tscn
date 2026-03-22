@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://1jg6jc4jkf62"]
+[gd_scene format=3 uid="uid://dhwjymfmnc6an"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_0ymjr"]
+[ext_resource type="Script" uid="uid://v07e5raqhup4" path="res://scripts/enemy.gd" id="1_0ymjr"]
 [ext_resource type="Texture2D" uid="uid://dcx2supjkijtm" path="res://assets/EnemyCowboy/attack & reload/enemy_cowboy_attack_right_spritesheet.png" id="1_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://bop66ecugqqff" path="res://assets/EnemyCowboy/death/enemy_cowboy_death_spritesheet.png" id="2_c4w8v"]
 [ext_resource type="Texture2D" uid="uid://c7bmsc7icrpt7" path="res://assets/EnemyCowboy/attack & reload/enemy_cowboy_reload_right_spritesheet.png" id="3_xwavj"]
 [ext_resource type="Texture2D" uid="uid://byyb3watmaqr" path="res://assets/EnemyCowboy/walk/enemy_cowboy_walk_right_spritesheet.png" id="4_nenq2"]
+[ext_resource type="AudioStream" uid="uid://c7jyb8f2at486" path="res://assets/Sfx/581564__ipellison__metal-bars_hit5.wav" id="6_xwavj"]
+[ext_resource type="AudioStream" uid="uid://bqsrlfd73len1" path="res://assets/Sfx/368732__leszek_szary__shoot-3.wav" id="7_nenq2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4sjlk"]
 atlas = ExtResource("1_5uy6h")
@@ -177,3 +179,10 @@ target_position = Vector2(0, 12)
 [node name="RightGroundCheck" type="RayCast2D" parent="." unique_id=1084617928]
 position = Vector2(7, 0)
 target_position = Vector2(0, 12)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1738849272]
+stream = ExtResource("6_xwavj")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1209767741]
+stream = ExtResource("7_nenq2")
+volume_db = -16.096

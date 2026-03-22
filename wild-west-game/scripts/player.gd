@@ -14,6 +14,9 @@ var coins: int = 0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ladder_ray_cast: RayCast2D = $ladderRayCast
+@onready var shoot_sound: AudioStreamPlayer = $AudioStreamPlayer
+@onready var hurt: AudioStreamPlayer = $hurt
+@onready var death: AudioStreamPlayer = $deathsound
 
 
 enum ActionState {
@@ -115,6 +118,7 @@ func spawn_bullet() -> void:
 	bullet.shooter = self
 	bullet.global_position = global_position + Vector2(BULLET_SPAWN_OFFSET.x * bullet_direction, BULLET_SPAWN_OFFSET.y)
 	bullet.scale.x = absf(bullet.scale.x) * bullet_direction
+	shoot_sound.play()
 	get_tree().current_scene.add_child(bullet)
 	
 func _ladder_climb(horizontal_input: float, climb_input: float, on_ladder: bool) -> void:
@@ -164,18 +168,21 @@ func die():
 	velocity = Vector2.ZERO
 	
 	# Play death animation
+	death.play()
 	animated_sprite_2d.play("die")
-	_return_to_title()
+	_handle_death_transition()
 
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
-
+	
 	health = max(health - amount, 0)
 	_update_health_label()
 
 	if health == 0:
 		die()
+	else:
+		hurt.play()
 
 func add_coins(amount: int) -> void:
 	coins += amount
@@ -193,8 +200,14 @@ func _update_coins_label() -> void:
 	if coins_label:
 		coins_label.text = str(coins)
 
-func _return_to_title() -> void:
+func _handle_death_transition() -> void:
 	Engine.time_scale = 0.5
 	await get_tree().create_timer(4.0, true, false, true).timeout
 	Engine.time_scale = 1.0
+
+	var current_scene := get_tree().current_scene
+	if current_scene != null and current_scene.scene_file_path == "res://scenes/train_ending.tscn":
+		get_tree().reload_current_scene()
+		return
+
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
