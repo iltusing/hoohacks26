@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cf7qgxcbo78ue" path="res://scenes/player.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dd2policsuw1n" path="res://scenes/killzone.tscn" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="8_tipki"]
 [ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="8_85g3d"]
 [ext_resource type="Texture2D" uid="uid://xaiy0glusy4q" path="res://assets/coin.png" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
+[ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("1_tbgi4")
@@ -2659,5 +2659,5 @@ position = Vector2(7.119278, 7.250004)
 scale = Vector2(5.1482034, -0.96625984)
 shape = SubResource("RectangleShape2D_tipki")
 
-[node name="Coin" parent="." unique_id=1674890837 instance=ExtResource("8_tipki")]
-position = Vector2(60, -11)
+[node name="Coin" parent="." unique_id=1674890837 instance=ExtResource("11_ya4ey")]
+position = Vector2(58, -8)
