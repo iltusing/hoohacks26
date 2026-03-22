@@ -4,13 +4,15 @@ extends CharacterBody2D
 @export var jump_velocity:= -250.0
 @export var gravity:= 900.0
 
+var is_dead := false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
 @onready var ladder_ray_cast: RayCast2D = $ladderRayCast
 
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
 	var ladderCollider = ladder_ray_cast.get_collider()
 	
 	if ladderCollider:
@@ -69,3 +71,14 @@ func _ladder_climb():
 	else: 
 		velocity = Vector2.ZERO
 		animated_sprite_2d.stop()
+
+func die():
+	if is_dead:
+		return
+	
+	is_dead = true
+	
+	velocity = Vector2.ZERO
+	
+	# Play death animation
+	animated_sprite_2d.play("die")
