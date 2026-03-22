@@ -169,3 +169,15 @@ animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1278723566]
 shape = SubResource("RectangleShape2D_44cfe")
+
+[node name="LeftGroundCheck" type="RayCast2D" parent="." unique_id=95401456]
+position = Vector2(-7, 0)
+target_position = Vector2(0, 12)
+collision_mask = 1
+enabled = true
+
+[node name="RightGroundCheck" type="RayCast2D" parent="." unique_id=1084617928]
+position = Vector2(7, 0)
+target_position = Vector2(0, 12)
+collision_mask = 1
+enabled = true

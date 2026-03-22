@@ -22,6 +22,8 @@ enum ActionState {
 }
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var left_ground_check: RayCast2D = $LeftGroundCheck
+@onready var right_ground_check: RayCast2D = $RightGroundCheck
 
 var player: CharacterBody2D
 var action_state: ActionState = ActionState.NONE
@@ -61,6 +63,10 @@ func _handle_wander(delta: float) -> void:
 	wander_timer -= delta
 	if wander_timer <= 0.0:
 		_pick_new_wander_direction()
+
+	if _will_walk_off_edge():
+		wander_direction *= -1.0
+		wander_timer = randf_range(wander_interval_min, wander_interval_max)
 
 	velocity.x = wander_direction * walk_speed
 	_update_facing()
@@ -107,6 +113,17 @@ func _pick_new_wander_direction() -> void:
 	var directions := [-1.0, 0.0, 1.0]
 	wander_direction = directions[randi() % directions.size()]
 	wander_timer = randf_range(wander_interval_min, wander_interval_max)
+
+func _will_walk_off_edge() -> bool:
+	if not is_on_floor():
+		return false
+
+	if wander_direction < 0.0:
+		return not left_ground_check.is_colliding()
+	if wander_direction > 0.0:
+		return not right_ground_check.is_colliding()
+
+	return false
 
 func _fire_at_player() -> void:
 	action_state = ActionState.ATTACKING
