@@ -3292,7 +3292,7 @@ tile_set = SubResource("TileSet_lpvoh")
 
 [node name="Player" parent="." unique_id=1502754261 groups=["player"] instance=ExtResource("6_tefeu")]
 z_index = 6
-position = Vector2(9, -7)
+position = Vector2(7, -9)
 collision_layer = 4
 
 [node name="UI" type="MarginContainer" parent="Player" unique_id=179841201]
@@ -3382,7 +3382,7 @@ scale = Vector2(5.1482034, -0.96625984)
 shape = SubResource("RectangleShape2D_tipki")
 
 [node name="Coin" parent="." unique_id=1674890837 instance=ExtResource("11_ya4ey")]
-position = Vector2(75, -94)
+position = Vector2(59, -9)
 
 [node name="Coin2" parent="." unique_id=1715055784 instance=ExtResource("11_ya4ey")]
 position = Vector2(224, -79)
@@ -3503,7 +3503,7 @@ scale = Vector2(1.0983694, 1.041719)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_85g3d")
 theme_override_font_sizes/normal_font_size = 6
-text = "If I earn 12 coins, I can buy a train ticket to finally get out of this dump."
+text = "If I earn 10 coins, I can buy a train ticket to finally get out of this dump."
 fit_content = true
 
 [connection signal="body_entered" from="Killzone" to="Enemy1" method="_on_killzone_body_entered"]
