@@ -7,9 +7,10 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if body.has_method("die"):
 		body.die()
-	
-	Engine.time_scale = 0.5
-	timer.start()
+
+	if body.is_in_group("player"):
+		Engine.time_scale = 0.5
+		timer.start()
 
 
 func _on_timer_timeout() -> void:

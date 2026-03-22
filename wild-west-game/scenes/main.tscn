@@ -2662,6 +2662,10 @@ shape = SubResource("RectangleShape2D_tipki")
 
 [node name="Coin" parent="." unique_id=1674890837 instance=ExtResource("11_ya4ey")]
 position = Vector2(58, -8)
+collision_layer = 4
+collision_mask = 5
 
-[node name="CharacterBody2D" parent="." unique_id=1724629270 instance=ExtResource("12_eb6dy")]
+[node name="Enemy1" parent="." unique_id=1724629270 instance=ExtResource("12_eb6dy")]
 position = Vector2(303, -80)
+
+[connection signal="body_entered" from="Killzone" to="Enemy1" method="_on_killzone_body_entered"]

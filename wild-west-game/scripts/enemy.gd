@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
-@export var walk_speed: float = 35.0
-@export var chase_speed: float = 65.0
+@export var walk_speed: float = 37.5
+@export var chase_speed: float = 37.5
 @export var jump_velocity: float = -220.0
 @export var gravity: float = 900.0
-@export var aggro_distance: float = 140.0
+@export var aggro_distance: float = 50.0
 @export var shoot_interval: float = 1.4
 @export var wander_interval_min: float = 0.8
 @export var wander_interval_max: float = 2.2
 @export var jump_height_threshold: float = 12.0
+@export var stop_distance: float = 18.0
 
 const BULLET_SCENE := preload("res://scenes/bullet.tscn")
 const BULLET_SPAWN_OFFSET := Vector2(10.0, 1.0)
@@ -75,12 +76,17 @@ func _handle_aggro(_delta: float) -> void:
 		velocity.x = 0.0
 		return
 
-	var direction_to_player: float = sign(player.global_position.x - global_position.x)
+	var x_distance_to_player: float = player.global_position.x - global_position.x
+	var direction_to_player: float = sign(x_distance_to_player)
 	if is_zero_approx(direction_to_player):
 		direction_to_player = 1.0
 
-	velocity.x = direction_to_player * chase_speed
-	_update_facing()
+	if absf(x_distance_to_player) <= stop_distance:
+		velocity.x = 0.0
+	else:
+		velocity.x = direction_to_player * chase_speed
+
+	_update_facing(direction_to_player)
 
 	if is_on_floor() and player.global_position.y < global_position.y - jump_height_threshold:
 		velocity.y = jump_velocity
@@ -119,8 +125,12 @@ func _spawn_bullet() -> void:
 	bullet.scale.x = absf(bullet.scale.x) * bullet_direction
 	get_tree().current_scene.add_child(bullet)
 
-func _update_facing() -> void:
-	if velocity.x > 0:
+func _update_facing(direction_hint: float = 0.0) -> void:
+	if direction_hint > 0.0:
+		animated_sprite_2d.flip_h = false
+	elif direction_hint < 0.0:
+		animated_sprite_2d.flip_h = true
+	elif velocity.x > 0:
 		animated_sprite_2d.flip_h = false
 	elif velocity.x < 0:
 		animated_sprite_2d.flip_h = true
@@ -131,8 +141,6 @@ func _on_animation_finished() -> void:
 		animated_sprite_2d.play("reload")
 	elif animated_sprite_2d.animation == "reload" and action_state == ActionState.RELOADING:
 		action_state = ActionState.NONE
-	elif animated_sprite_2d.animation == "die" and action_state == ActionState.DYING:
-		queue_free()
 
 func die() -> void:
 	if is_dead:
@@ -142,3 +150,8 @@ func die() -> void:
 	action_state = ActionState.DYING
 	velocity = Vector2.ZERO
 	animated_sprite_2d.play("die")
+
+
+func _on_killzone_body_entered(body: Node2D) -> void:
+	if body == self:
+		die()
