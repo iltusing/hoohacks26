@@ -165,7 +165,7 @@ func die():
 	
 	# Play death animation
 	animated_sprite_2d.play("die")
-	_return_to_title()
+	_handle_death_transition()
 
 func take_damage(amount: int) -> void:
 	if is_dead:
@@ -193,8 +193,14 @@ func _update_coins_label() -> void:
 	if coins_label:
 		coins_label.text = str(coins)
 
-func _return_to_title() -> void:
+func _handle_death_transition() -> void:
 	Engine.time_scale = 0.5
 	await get_tree().create_timer(4.0, true, false, true).timeout
 	Engine.time_scale = 1.0
+
+	var current_scene := get_tree().current_scene
+	if current_scene != null and current_scene.scene_file_path == "res://scenes/train_ending.tscn":
+		get_tree().reload_current_scene()
+		return
+
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
