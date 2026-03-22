@@ -3257,10 +3257,18 @@ tile_set = SubResource("TileSet_j0xe4")
 [node name="DoorSpawn" type="Marker2D" parent="." unique_id=1458879856]
 position = Vector2(-83, 5)
 
-[node name="Player" parent="." unique_id=1502754261 groups=["player"] instance=ExtResource("7_picpg")]
+[node name="exit" type="Area2D" parent="." unique_id=1936292907]
+collision_layer = 5
+script = ExtResource("8_ukq1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=955325745]
+position = Vector2(-84, 6)
+shape = SubResource("RectangleShape2D_ov0kk")
+
+[node name="Player" parent="." unique_id=1502754261 instance=ExtResource("7_picpg")]
 position = Vector2(-84, 9)
 
-[node name="UI" type="MarginContainer" parent="Player" unique_id=716373165]
+[node name="UI" type="MarginContainer" parent="Player" unique_id=348109410]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3271,47 +3279,53 @@ offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Player/UI" unique_id=43784488]
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/UI" unique_id=116781390]
 layout_mode = 2
 theme_override_constants/separation = -3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=1925897985]
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=1680366497]
 layout_mode = 2
 
-[node name="coin_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBoxContainer" unique_id=1932355992]
+[node name="coin_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBoxContainer" unique_id=2106891915]
 layout_mode = 2
 texture = ExtResource("8_3f6uk")
 expand_mode = 2
 
-[node name="COINS" type="Label" parent="Player/UI/VBoxContainer/HBoxContainer" unique_id=488984794]
+[node name="COINS" type="Label" parent="Player/UI/VBoxContainer/HBoxContainer" unique_id=1406464227]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_2higd")
 theme_override_font_sizes/font_size = 8
 text = "0"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=1030344777]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=946619297]
 layout_mode = 2
 
-[node name="heart_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBoxContainer2" unique_id=1383048589]
+[node name="heart_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBoxContainer2" unique_id=1483746365]
 layout_mode = 2
 texture = ExtResource("10_to75x")
 expand_mode = 2
 
-[node name="HEALTH" type="Label" parent="Player/UI/VBoxContainer/HBoxContainer2" unique_id=968047336]
+[node name="HEALTH" type="Label" parent="Player/UI/VBoxContainer/HBoxContainer2" unique_id=1665242967]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_2higd")
 theme_override_font_sizes/font_size = 8
 text = "100"
 
-[node name="exit" type="Area2D" parent="." unique_id=1936292907]
-collision_layer = 5
-script = ExtResource("8_ukq1x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=955325745]
-position = Vector2(-84, 6)
-shape = SubResource("RectangleShape2D_ov0kk")
+[node name="GAMEOVER" type="Label" parent="Player/UI" unique_id=487655752]
+unique_name_in_owner = true
+visible = false
+z_index = 5
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_2higd")
+theme_override_font_sizes/font_size = 25
+text = "Game Over"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="exit" to="exit" method="_on_body_entered"]
 [connection signal="body_exited" from="exit" to="exit" method="_on_body_exited"]
