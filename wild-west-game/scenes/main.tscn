@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cnwehkkqvu1jr" path="res://assets/Yeehaw/yeehaw_parallax_layerB_standard.png" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cf7qgxcbo78ue" path="res://scenes/player.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dd2policsuw1n" path="res://scenes/killzone.tscn" id="7_o6xl0"]
+[ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="8_85g3d"]
+[ext_resource type="Texture2D" uid="uid://xaiy0glusy4q" path="res://assets/coin.png" id="8_tipki"]
+[ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
 texture = ExtResource("1_tbgi4")
@@ -2600,6 +2603,51 @@ tile_set = SubResource("TileSet_lpvoh")
 [node name="Player" parent="." unique_id=1502754261 instance=ExtResource("6_tefeu")]
 position = Vector2(0, -7)
 collision_layer = 5
+
+[node name="UI" type="MarginContainer" parent="Player" unique_id=179841201]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -55.0
+offset_right = 80.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/UI" unique_id=709999055]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=1260321881]
+layout_mode = 2
+
+[node name="coin_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBoxContainer" unique_id=1868992016]
+layout_mode = 2
+texture = ExtResource("8_tipki")
+expand_mode = 2
+
+[node name="COINS" type="Label" parent="Player/UI/VBoxContainer/HBoxContainer" unique_id=1282512494]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_85g3d")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Player/UI/VBoxContainer" unique_id=676801801]
+layout_mode = 2
+
+[node name="heart_texture" type="TextureRect" parent="Player/UI/VBoxContainer/HBoxContainer2" unique_id=1313347392]
+layout_mode = 2
+texture = ExtResource("9_choun")
+expand_mode = 2
+
+[node name="HEALTH" type="Label" parent="Player/UI/VBoxContainer/HBoxContainer2" unique_id=1342046963]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_85g3d")
+theme_override_font_sizes/font_size = 8
+text = "0"
 
 [node name="Killzone" parent="." unique_id=155024343 instance=ExtResource("7_o6xl0")]
 position = Vector2(141, 22)
