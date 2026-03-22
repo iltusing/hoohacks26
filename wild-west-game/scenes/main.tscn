@@ -10,15 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://dd2policsuw1n" path="res://scenes/killzone.tscn" id="7_o6xl0"]
 [ext_resource type="FontFile" uid="uid://b0ttca7j2s5x0" path="res://assets/Fonts/rye.ttf" id="8_85g3d"]
 [ext_resource type="Texture2D" uid="uid://xaiy0glusy4q" path="res://assets/coin.png" id="8_tipki"]
-[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://bj5g01poq8mwn" path="res://scenes/platform.tscn" id="9_85g3d"]
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
 [ext_resource type="Texture2D" uid="uid://b5oww56gmffwm" path="res://assets/greenbottle.png" id="11_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://1jg6jc4jkf62" path="res://scenes/enemy.tscn" id="12_eb6dy"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://dhwjymfmnc6an" path="res://scenes/enemy.tscn" id="12_eb6dy"]
 [ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scripts/saloon_enter.gd" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dtevmtfkvhkj" path="res://scenes/quest_npc.tscn" id="16_muem4"]
-[ext_resource type="PackedScene" uid="uid://d4d3onxinyswr" path="res://scenes/bottle.tscn" id="18_dp3eg"]
-[ext_resource type="PackedScene" uid="uid://bbpfoewfhp0dt" path="res://scenes/saloon.tscn" id="19_0ld40"]
+[ext_resource type="PackedScene" uid="uid://bwqmkeyb1ldsu" path="res://scenes/bottle.tscn" id="18_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://bxvqnvab8nmn2" path="res://scenes/saloon.tscn" id="19_0ld40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
 texture = ExtResource("1_tbgi4")
@@ -3399,22 +3399,22 @@ position = Vector2(224, -79)
 [node name="Coin3" parent="." unique_id=640767905 instance=ExtResource("11_ya4ey")]
 position = Vector2(784, -37)
 
-[node name="Coin2" parent="." unique_id=1768028748 instance=ExtResource("11_ya4ey")]
+[node name="Coin4" parent="." unique_id=1768028748 instance=ExtResource("11_ya4ey")]
 position = Vector2(277, -81)
 
-[node name="Coin3" parent="." unique_id=263091962 instance=ExtResource("11_ya4ey")]
+[node name="Coin5" parent="." unique_id=263091962 instance=ExtResource("11_ya4ey")]
 position = Vector2(572, -53)
 
-[node name="Coin4" parent="." unique_id=76392019 instance=ExtResource("11_ya4ey")]
+[node name="Coin6" parent="." unique_id=76392019 instance=ExtResource("11_ya4ey")]
 position = Vector2(987, -22)
 
-[node name="Coin5" parent="." unique_id=795056775 instance=ExtResource("11_ya4ey")]
+[node name="Coin7" parent="." unique_id=795056775 instance=ExtResource("11_ya4ey")]
 position = Vector2(1350, -22)
 
-[node name="Coin6" parent="." unique_id=536857401 instance=ExtResource("11_ya4ey")]
+[node name="Coin8" parent="." unique_id=536857401 instance=ExtResource("11_ya4ey")]
 position = Vector2(1478, -6)
 
-[node name="Coin7" parent="." unique_id=1743406904 instance=ExtResource("11_ya4ey")]
+[node name="Coin9" parent="." unique_id=1743406904 instance=ExtResource("11_ya4ey")]
 position = Vector2(1478, -6)
 
 [node name="Killzone2" parent="." unique_id=1891375319 instance=ExtResource("7_o6xl0")]
