@@ -3443,10 +3443,22 @@ shape = SubResource("RectangleShape2D_jkv2x")
 position = Vector2(873, -55)
 
 [node name="bottle2" parent="." unique_id=1614141348 instance=ExtResource("18_dp3eg")]
-position = Vector2(1024, -46)
+position = Vector2(1143, 9)
 
 [node name="bottle3" parent="." unique_id=1031815687 instance=ExtResource("18_dp3eg")]
-position = Vector2(1054, -46)
+position = Vector2(1261, -7)
+
+[node name="bottle4" parent="." unique_id=1381210546 instance=ExtResource("18_dp3eg")]
+position = Vector2(1234, 88)
+
+[node name="bottle5" parent="." unique_id=1163169456 instance=ExtResource("18_dp3eg")]
+position = Vector2(1412, 81)
+
+[node name="bottle6" parent="." unique_id=726443999 instance=ExtResource("18_dp3eg")]
+position = Vector2(1362, -23)
+
+[node name="bottle7" parent="." unique_id=18587718 instance=ExtResource("18_dp3eg")]
+position = Vector2(1026, -47)
 
 [connection signal="body_entered" from="Killzone" to="Enemy1" method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="saloonEnter" to="saloonEnter" method="_on_body_entered"]
