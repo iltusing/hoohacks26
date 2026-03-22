@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scenes/saloon_enter.gd" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dtevmtfkvhkj" path="res://scenes/quest_npc.tscn" id="16_muem4"]
 [ext_resource type="PackedScene" uid="uid://d4d3onxinyswr" path="res://scenes/bottle.tscn" id="18_dp3eg"]
-[ext_resource type="PackedScene" uid="uid://bbpfoewfhp0dt" path="res://scenes/saloon.tscn" id="19_0ld40"]
+[ext_resource type="PackedScene" path="res://scenes/saloon.tscn" id="19_0ld40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
 texture = ExtResource("1_tbgi4")
@@ -3253,7 +3253,7 @@ sources/4 = SubResource("TileSetAtlasSource_gqmmt")
 sources/5 = SubResource("TileSetAtlasSource_yc10j")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
-size = Vector2(8.111843, 23.573143)
+size = Vector2(8.111843, 21.848278)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkv2x"]
 
@@ -3399,7 +3399,7 @@ position = Vector2(597, 26)
 scale = Vector2(1, 1.44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone4" unique_id=963155966]
-position = Vector2(6, 4.1666665)
+position = Vector2(6, 5)
 scale = Vector2(5.1482034, -0.9662598)
 shape = SubResource("RectangleShape2D_tipki")
 
