@@ -243,12 +243,14 @@ script = ExtResource("1_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=492711243]
 sprite_frames = SubResource("SpriteFrames_g2els")
+animation = &"climb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572601383]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_u8vuu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1895488682]
+position = Vector2(0, -2)
 scale = Vector2(0.73257834, 0.7544086)
 offset = Vector2(0, -10)
 zoom = Vector2(4, 4)
