@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://6vu80upjw4sy" path="res://assets/heart.png" id="9_choun"]
 [ext_resource type="PackedScene" uid="uid://da48gb4eftwwc" path="res://scenes/coin.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://1jg6jc4jkf62" path="res://scenes/enemy.tscn" id="12_eb6dy"]
+[ext_resource type="Script" uid="uid://6ddh60p4rwri" path="res://scenes/saloon_enter.gd" id="15_jkv2x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
 texture = ExtResource("1_tbgi4")
@@ -3250,6 +3251,8 @@ sources/5 = SubResource("TileSetAtlasSource_yc10j")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
 size = Vector2(8.111843, 23.573143)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkv2x"]
+
 [node name="Test2" type="Node2D" unique_id=1451419808]
 
 [node name="ground" type="TileMapLayer" parent="." unique_id=829599278]
@@ -3277,7 +3280,7 @@ tile_map_data = PackedByteArray("AAACAP//AgAIAAMAAAACAP7/AgAIAAIAAAALAP//AgAJAAM
 tile_set = SubResource("TileSet_lpvoh")
 
 [node name="Player" parent="." unique_id=1502754261 groups=["player"] instance=ExtResource("6_tefeu")]
-position = Vector2(0, -6)
+position = Vector2(272, -85)
 collision_layer = 4
 
 [node name="UI" type="MarginContainer" parent="Player" unique_id=179841201]
@@ -3381,4 +3384,14 @@ collision_mask = 5
 [node name="Enemy1" parent="." unique_id=1724629270 instance=ExtResource("12_eb6dy")]
 position = Vector2(303, -80)
 
+[node name="saloonEnter" type="Area2D" parent="." unique_id=699431808]
+position = Vector2(1012, 6)
+collision_mask = 5
+script = ExtResource("15_jkv2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saloonEnter" unique_id=863149046]
+shape = SubResource("RectangleShape2D_jkv2x")
+
 [connection signal="body_entered" from="Killzone" to="Enemy1" method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="saloonEnter" to="saloonEnter" method="_on_body_entered"]
+[connection signal="body_exited" from="saloonEnter" to="saloonEnter" method="_on_body_exited"]
