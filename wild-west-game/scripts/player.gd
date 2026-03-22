@@ -65,7 +65,7 @@ func _ladder_climb():
 	
 	if direction: 
 		velocity = direction * speed / 2
-		animated_sprite_2d.play("fall")
+		animated_sprite_2d.play("climb")
 	else: 
 		velocity = Vector2.ZERO
 		animated_sprite_2d.stop()
