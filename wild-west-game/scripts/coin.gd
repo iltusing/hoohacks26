@@ -17,7 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		animated_sprite_2d.hide()
 		collision_shape_2d.set_deferred("disabled", true)
-		
+		%COINS.text = str(int(%COINS.text) + 1)
 		pickup_sound.play()
 		await pickup_sound.finished
 		queue_free()
