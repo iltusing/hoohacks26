@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://da48gb4eftwwc"]
 
-[ext_resource type="Script" path="res://scripts/coin.gd" id="1_jsmju"]
+[ext_resource type="Script" uid="uid://ibhldjvnaarr" path="res://scripts/coin.gd" id="1_jsmju"]
 [ext_resource type="Texture2D" uid="uid://ccue3v6u0yw3s" path="res://assets/Coins/item57.png" id="1_te2np"]
 [ext_resource type="Texture2D" uid="uid://dwtjwk8ngurj7" path="res://assets/Coins/item58.png" id="2_m1j4n"]
 [ext_resource type="Texture2D" uid="uid://b4lfsvi3ewlwp" path="res://assets/Coins/item59.png" id="3_v1mwu"]
@@ -47,6 +47,8 @@ animations = [{
 radius = 5.0990195
 
 [node name="Coin" type="Area2D" unique_id=1674890837]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_jsmju")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1858853821]
